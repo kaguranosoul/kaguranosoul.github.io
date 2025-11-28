@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Categories on 神楽之魂的博客</title>
+        <link>http://localhost:1313/categories/</link>
+        <description>Recent content in Categories on 神楽之魂的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Tue, 15 Aug 2023 20:41:35 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>技术笔记</title>
+        <link>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</link>
+        <pubDate>Tue, 15 Aug 2023 20:41:35 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/image.png" alt="Featured image of post 技术笔记" /&gt;</description>
+        </item>
+        <item>
+        <title>痴人呓语 </title>
+        <link>http://localhost:1313/categories/%E7%97%B4%E4%BA%BA%E5%91%93%E8%AF%AD/</link>
+        <pubDate>Sun, 11 Dec 2022 23:31:54 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E7%97%B4%E4%BA%BA%E5%91%93%E8%AF%AD/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/%E7%97%B4%E4%BA%BA%E5%91%93%E8%AF%AD/image.png" alt="Featured image of post 痴人呓语 " /&gt;</description>
+        </item>
+        <item>
+        <title>归档</title>
+        <link>http://localhost:1313/categories/%E5%BD%92%E6%A1%A3/</link>
+        <pubDate>Tue, 29 Nov 2022 15:10:56 +0000</pubDate>
+        
+        <guid>http://localhost:1313/categories/%E5%BD%92%E6%A1%A3/</guid>
+        <description>&lt;img src="http://localhost:1313/categories/%E5%BD%92%E6%A1%A3/image.png" alt="Featured image of post 归档" /&gt;</description>
+        </item>
+        
+    </channel>
+</rss>

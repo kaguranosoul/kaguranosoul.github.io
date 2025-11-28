@@ -1,0 +1,2527 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="CSS前端三剑客的老二\n1.CSS简介\r1html自身的局限性\r2CSS选择器\rcss的规则主要由两个部分组成的 选择器和一条或者多条声明\n1 2 &lt;选择器 属性 值 coor red这句话是声明&gt; h1 {color:red; font-size:25px;} 简单来说，选择标签用的\n选择器分为 基础选择器和复合选择器\n">
+<title>CSS基础</title>
+
+<link rel='canonical' href='http://localhost:1313/post/10605/'>
+
+<link rel="stylesheet" href="/scss/style.min.2ead26fa5df18ee63e8b93c4633f8c6957743eb13c8ba990934545fa8186c5ac.css"><meta property='og:title' content="CSS基础">
+<meta property='og:description' content="CSS前端三剑客的老二\n1.CSS简介\r1html自身的局限性\r2CSS选择器\rcss的规则主要由两个部分组成的 选择器和一条或者多条声明\n1 2 &lt;选择器 属性 值 coor red这句话是声明&gt; h1 {color:red; font-size:25px;} 简单来说，选择标签用的\n选择器分为 基础选择器和复合选择器\n">
+<meta property='og:url' content='http://localhost:1313/post/10605/'>
+<meta property='og:site_name' content='神楽之魂的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='CSS' /><meta property='article:tag' content='前端' /><meta property='article:published_time' content='2021-12-03T14:46:59&#43;00:00'/><meta property='article:modified_time' content='2021-12-03T14:46:59&#43;00:00'/><meta property='og:image' content='https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012928.png' />
+<meta name="twitter:title" content="CSS基础">
+<meta name="twitter:description" content="CSS前端三剑客的老二\n1.CSS简介\r1html自身的局限性\r2CSS选择器\rcss的规则主要由两个部分组成的 选择器和一条或者多条声明\n1 2 &lt;选择器 属性 值 coor red这句话是声明&gt; h1 {color:red; font-size:25px;} 简单来说，选择标签用的\n选择器分为 基础选择器和复合选择器\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012928.png' />
+    <link rel="shortcut icon" href="/img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_7c008adc2b535ffc.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">神楽之魂的博客</a></h1>
+            <h2 class="site-description">C&#39;est la vie</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Kaguranotamashii'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/ja/" >日本語</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1css简介">1.CSS简介</a>
+      <ol>
+        <li><a href="#1html自身的局限性">1html自身的局限性</a></li>
+        <li><a href="#2css选择器">2CSS选择器</a>
+          <ol>
+            <li><a href="#1标签选择器">1.标签选择器</a></li>
+            <li><a href="#2类选择器-常用">2.类选择器 （常用）</a>
+              <ol>
+                <li><a href="#1使用">1.使用</a></li>
+                <li><a href="#2多类名">2.多类名</a></li>
+              </ol>
+            </li>
+            <li><a href="#3id选择器">3.ID选择器</a></li>
+            <li><a href="#4通配符选择器">4通配符选择器</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#2属性">2属性</a>
+      <ol>
+        <li><a href="#1文字">1.文字</a>
+          <ol>
+            <li><a href="#1font-family">1font-family</a></li>
+            <li><a href="#2font-size">2.font-size</a></li>
+            <li><a href="#3font-weight">3.font-weight</a></li>
+            <li><a href="#4font-style">4font-style</a></li>
+            <li><a href="#5font的复合用法">5.font的复合用法</a></li>
+          </ol>
+        </li>
+        <li><a href="#2文本">2.文本</a>
+          <ol>
+            <li><a href="#1color">1.color</a></li>
+            <li><a href="#2text-align">2.text-align</a></li>
+            <li><a href="#3text-decoration">3.text-decoration</a></li>
+            <li><a href="#4text-indent">4text-indent</a></li>
+            <li><a href="#5line-height">5line-height</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#3css引入方式">3.css引入方式</a>
+      <ol>
+        <li><a href="#1内部样态表">1内部样态表</a></li>
+        <li><a href="#2行内样态表">2.行内样态表</a></li>
+        <li><a href="#3外部样态表">3外部样态表</a></li>
+      </ol>
+    </li>
+    <li><a href="#4chrome调试工具">4chrome调试工具</a></li>
+    <li><a href="#5emmet语法">5.Emmet语法</a></li>
+    <li><a href="#6css复合选择器"><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112062325330.png" alt="">6.CSS复合选择器</a>
+      <ol>
+        <li><a href="#1后代选择器-主要">1.后代选择器 主要</a></li>
+        <li><a href="#2子选择器-重要">2.子选择器 重要</a></li>
+        <li><a href="#3并集选择器">3,并集选择器</a></li>
+        <li><a href="#4伪类选择器">4.伪类选择器</a>
+          <ol>
+            <li><a href="#1链接伪类">1.链接伪类</a></li>
+            <li><a href="#2focus伪类选择器">2.:focus伪类选择器</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#7css元素显示模式重点"><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112082232499.png" alt="">7.CSS元素显示模式（重点)</a>
+      <ol>
+        <li><a href="#1块元素">1.块元素</a></li>
+        <li><a href="#2行内元素">2.行内元素</a></li>
+        <li><a href="#3行内块元素">3.行内块元素</a></li>
+        <li><a href="#4元素显示模式转换">4.元素显示模式转换</a></li>
+        <li><a href="#5实例简洁版本侧边档">5.实例简洁版本侧边档</a>
+          <ol>
+            <li><a href="#6单行文字垂直居中">6单行文字垂直居中</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#8css的背景">8CSS的背景</a>
+      <ol>
+        <li><a href="#1background-color">1.background-color</a></li>
+        <li><a href="#2background-image">2.background-image</a></li>
+        <li><a href="#3background-repeat">3.background-repeat</a></li>
+        <li><a href="#4background-position">4.background-position</a></li>
+        <li><a href="#5background-attachment">5.background-attachment</a></li>
+        <li><a href="#6背景属性混合写法">6背景属性混合写法</a></li>
+        <li><a href="#7背景色半透明">7.背景色半透明</a></li>
+        <li><a href="#7综合案例-五彩导航">7.综合案例 五彩导航</a></li>
+      </ol>
+    </li>
+    <li><a href="#9css三大特征">9.CSS三大特征</a>
+      <ol>
+        <li><a href="#1层叠性">1.层叠性</a></li>
+        <li><a href="#2继承性">2.继承性</a></li>
+        <li><a href="#行高的继承"><strong>行高的继承</strong></a></li>
+        <li><a href="#3优先性">3.优先性</a></li>
+      </ol>
+    </li>
+    <li><a href="#10盒子模型超重点box-model">10.<strong>盒子模型</strong>（超重点）Box Model</a>
+      <ol>
+        <li><a href="#1border边框">1.border边框</a></li>
+        <li><a href="#2padding内边距">2.padding内边距</a></li>
+        <li><a href="#3margin外边距">3.margin外边距</a></li>
+      </ol>
+    </li>
+    <li><a href="#11浮动float">11.浮动float</a>
+      <ol>
+        <li><a href="#清除浮动">清除浮动</a></li>
+      </ol>
+    </li>
+    <li><a href="#12定位">12定位</a>
+      <ol>
+        <li><a href="#1static静态定位">1static静态定位</a></li>
+        <li><a href="#2relative相对定位">2relative相对定位</a></li>
+        <li><a href="#3absolute绝对定位">3absolute绝对定位</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/10605/">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012928.png" loading="lazy" alt="Featured image of post CSS基础" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                技术笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/10605/">CSS基础</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2021-12-03T14:46:59Z'>Dec 03, 2021</time>
+            </div>
+        
+
+        
+
+
+
+
+
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 10 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>CSS前端三剑客的老二</p>
+<!-- more -->
+<img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012928.png"/>
+<h1 id="1css简介">1.CSS简介
+</h1><h2 id="1html自身的局限性">1html自身的局限性
+</h2><h2 id="2css选择器">2CSS选择器
+</h2><p>css的规则主要由两个部分组成的 <strong>选择器</strong>和一条或者多条<strong>声明</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">选择器</span>   <span class="na">属性</span>   <span class="na">值</span>  <span class="na">coor</span> <span class="na">red这句话是声明</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">h1     {color:red; font-size:25px;}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>简单来说，选择标签用的</p>
+<p>选择器分为 <strong>基础选择器</strong>和<strong>复合选择器</strong></p>
+<p>基础又分为 <strong>标签选择器 类选择器 id选择器 通配符选择器</strong></p>
+<h3 id="1标签选择器">1.标签选择器
+</h3><p>html标签名词作为选择器</p>
+<p>语法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">标签名{
+</span></span><span class="line"><span class="cl">属性1：属性值1；
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">p</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">burlywood</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1234455<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1234455<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1234455<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>优点为快速为同类型的标签同意设置样态</p>
+<p>但是如果是出现多个相同的属性，会一同全部修改</p>
+<h3 id="2类选择器-常用">2.类选择器 （常用）
+</h3><h4 id="1使用">1.使用
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">.类名{
+</span></span><span class="line"><span class="cl">属性1:属性值；
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">p</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">burlywood</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">red</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1234455<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1234455<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>1234455<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>我想变成红色<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205013026.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<p>盒子</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;IE=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Document<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">red</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/*背景颜色*/</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">green</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>hong<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;green&#34;</span><span class="p">&gt;</span>绿色<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>hong<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012811.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<h4 id="2多类名">2.多类名
+</h4><p>在标签中class文件属性中写多个类名<br>
+<strong>但是类名中间必须要用空格</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">red</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">font35</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">font-size</span><span class="p">:</span> <span class="mi">30</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;red font35&#34;</span><span class="p">&gt;</span>神乐同学<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="3id选择器">3.ID选择器
+</h3><p>id可以选择特定的属性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">pink</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;pink&#34;</span><span class="p">&gt;</span>dsadasda<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>id选择用#定义 只能调用一次</p>
+<p>二者区别在于<strong>使用次数</strong><br>
+id选择器一般用于页面唯一的元素，所以一般和JavaScript使用</p>
+<h3 id="4通配符选择器">4通配符选择器
+</h3><p>用*号定义，它可以表示所有的元素</p>
+<h1 id="2属性">2属性
+</h1><h2 id="1文字">1.文字
+</h2><h3 id="1font-family">1font-family
+</h3><p>字体可用网络字体等</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">h2</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-family</span><span class="p">:</span> <span class="s1">&#39;宋体&#39;</span><span class="p">,</span><span class="s1">&#39;微软雅黑&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>我是来自北京信息科技大学的神乐<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>我是来自北京信息科技大学的神乐<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>我是来自北京信息科技大学的神乐<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2font-size">2.font-size
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">font-size</span><span class="p">:</span><span class="nd">20px</span><span class="o">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>px像素大小是网页中最常用的单位</p>
+<p>谷歌浏览器默认字体问=为16px</p>
+<p>不同浏览器字号大小不相同</p>
+<p>body指定整个页面字体大小</p>
+<h3 id="3font-weight">3.font-weight
+</h3><p>css中使用font-weight修改粗细程度</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">bold</span><span class="p">{</span><span class="k">font-weight</span><span class="p">:</span> <span class="kc">bold</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bold&#34;</span><span class="p">&gt;</span>神乐<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>bold就是相当于加粗效果 相当于number700<br>
+属性值 为400等于默认 700等于加粗</p>
+<h3 id="4font-style">4font-style
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">bold</span><span class="p">{</span><span class="k">font-style</span><span class="p">:</span> <span class="kc">normal</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bold&#34;</span><span class="p">&gt;</span>神乐<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>属性值中 normal为默认 italic为显示斜体<br>
+如果em标签和属性为italic的会变正</p>
+<h3 id="5font的复合用法">5.font的复合用法
+</h3><p>比如说div字体斜体 加粗 字号16 微软雅黑</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">font-size</span><span class="p">:</span><span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">font-family</span><span class="p">:</span><span class="s1">&#39;Microsoft yahei&#39;</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">font-weight</span><span class="p">:</span><span class="mi">700</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">font-style</span><span class="p">:</span><span class="kc">italic</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    古道西风瘦马
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>或者</p>
+<ul>
+<li>位置严格要求不能换</li>
+<li>除了size和family不能省略</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">/*
+</span></span><span class="line"><span class="cl">font: font-style font-weight font-size/font-height font-family;
+</span></span><span class="line"><span class="cl">*/        类         粗              大                   家
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">div{
+</span></span><span class="line"><span class="cl">font: itailc 700 16px &#34;微软雅黑&#34;;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051701977.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="2文本">2.文本
+</h2><p>文本属性分为 颜色 对齐 装饰文本 缩进 行间距</p>
+<h3 id="1color">1.color
+</h3><p>颜色表示方法分为三种</p>
+<ul>
+<li>预定义颜色值</li>
+<li>十六进制</li>
+<li>RGB代码</li>
+</ul>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051756815.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">div{
+</span></span><span class="line"><span class="cl">color: deeppink;
+</span></span><span class="line"><span class="cl">color: #ff0000;
+</span></span><span class="line"><span class="cl">color: rgb(200,0,0);
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2text-align">2.text-align
+</h3><p>样态文本<br>
+属性值分为：left默认,center居中,right右对齐</p>
+<h3 id="3text-decoration">3.text-decoration
+</h3><p>属性值为none默认,underline下划线,overlines上划线,line-through删除线</p>
+<h3 id="4text-indent">4text-indent
+</h3><p>文本缩进 通常是首行的缩进</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">text-indent:10px;
+</span></span><span class="line"><span class="cl">text-indent:2em;
+</span></span><span class="line"><span class="cl">/*em的意思为相对单位*/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="5line-height">5line-height
+</h3><p>控制行间距离的高度</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051916814.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>文本高度默认为16px</p>
+<p>所以line-height:16px；就是没有行间距</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051922317.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="3css引入方式">3.css引入方式
+</h1><h2 id="1内部样态表">1内部样态表
+</h2><p>单独放在style中</p>
+<p>方便 没有完全分离</p>
+<h2 id="2行内样态表">2.行内样态表
+</h2><p>直接在标签内部使用</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:red;&#34;</span><span class="p">&gt;</span>我是内容<span class="err">&lt;</span>/p？
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>style就是属性 写法要符合css规范</p>
+<h2 id="3外部样态表">3外部样态表
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">这是文件名字为：style.css 
+</span></span><span class="line"><span class="cl">div{
+</span></span><span class="line"><span class="cl">color:red;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;link rel=&#34;stylesheet&#34; href=&#34;syy.css&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">    &lt;div&gt;我是内容&lt;/div&gt;
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051946467.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="4chrome调试工具">4chrome调试工具
+</h1><p><a class="link" href="https://www.bilibili.com/video/BV14J4114768?p=92"  target="_blank" rel="noopener"
+    >点我查看</a></p>
+<h1 id="5emmet语法">5.Emmet语法
+</h1><h1 id="6css复合选择器"><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112062325330.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>6.CSS复合选择器
+</h1><p>后代选择器,子选择器,并集选择器,</p>
+<h2 id="1后代选择器-主要">1.后代选择器 主要
+</h2><p>元素1 元素2{}</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">ol</span> <span class="nt">li</span> <span class="nt">a</span> <span class="p">{</span><span class="k">color</span><span class="p">:</span><span class="kc">pink</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">.</span><span class="nc">name</span> <span class="nt">li</span><span class="p">{</span><span class="k">color</span><span class="p">:</span> <span class="kc">seagreen</span><span class="p">;}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我是后代<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>我是孙子<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">ol</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;name&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我是神乐<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2子选择器-重要">2.子选择器 重要
+</h2><h2 id="3并集选择器">3,并集选择器
+</h2><p>用逗号分隔开了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">div,p{
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4伪类选择器">4.伪类选择器
+</h2><p>用：表示</p>
+<h3 id="1链接伪类">1.链接伪类
+</h3><p>有很多种链接伪类</p>
+<p>link visited hover active</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112082243432.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">a:hover{
+</span></span><span class="line"><span class="cl">color:gray;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">鼠标经过显示gray颜色
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">a{
+</span></span><span class="line"><span class="cl">color:gray;
+</span></span><span class="line"><span class="cl">}
+</span></span><span class="line"><span class="cl">a:hover{
+</span></span><span class="line"><span class="cl">color:red;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2focus伪类选择器">2.:focus伪类选择器
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">input:focus{
+</span></span><span class="line"><span class="cl">background-color:yellow;
+</span></span><span class="line"><span class="cl">}
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="7css元素显示模式重点"><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112082232499.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+>7.CSS元素显示模式（重点)
+</h1><p>html元素分为<strong>块元素</strong>和<strong>行内元素</strong>两类型</p>
+<h2 id="1块元素">1.块元素
+</h2><p>h p div ul ol li等是最常见的div是最典型的</p>
+<ul>
+<li>特点独占一行</li>
+<li>高度宽度外内边距等可以控制</li>
+<li>宽度默认为容器（父级宽度）100%</li>
+<li>是一个容器以及盒子 可以放行内以及块级元素</li>
+</ul>
+<p>文字类的元素不能使用块级元素</p>
+<p>p里面只能放文字</p>
+<h2 id="2行内元素">2.行内元素
+</h2><p>a strong b em i del s ins u span</p>
+<p>span是最典型的行内元素</p>
+<ul>
+<li>高宽无效</li>
+<li>一行可以显示多个</li>
+<li>默认宽度就是本身内容宽度</li>
+</ul>
+<h2 id="3行内块元素">3.行内块元素
+</h2><p>img input td 两个特点都有比较特殊</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112082344551.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>总结</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112082351810.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="4元素显示模式转换">4.元素显示模式转换
+</h2><p>display:block;转换块元素</p>
+<p>display:inline;转换行内元素</p>
+<p>display:inline-block行内块元素</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">a</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">display</span><span class="p">:</span><span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5实例简洁版本侧边档">5.实例简洁版本侧边档
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">a</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">display</span><span class="p">:</span> <span class="kc">block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span>  <span class="kc">darkgray</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span> <span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-indent</span><span class="p">:</span> <span class="mi">2</span><span class="kt">em</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span> <span class="kc">coral</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>手机<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>电视<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>盒子<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="err">&lt;</span>/bod》
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112092315986.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h3 id="6单行文字垂直居中">6单行文字垂直居中
+</h3><p>可以通过文字的行高等于盒子的高度，就可以垂直居中</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220322203440.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="8css的背景">8CSS的背景
+</h1><p>小图片或者logo大图片</p>
+<p>背景颜色图片 平铺 位置 固定等等</p>
+<h2 id="1background-color">1.background-color
+</h2><p>background-color一般默认为transparent</p>
+<h2 id="2background-image">2.background-image
+</h2><p>使用方法为</p>
+<p>background-image:url ();</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">5000</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">1500</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">![](https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112101445712.png</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112101445712.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="3background-repeat">3.background-repeat
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">background-repeat:;/*默认平铺*/
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">no-repeat
+</span></span><span class="line"><span class="cl">repeat
+</span></span><span class="line"><span class="cl">repeat-x
+</span></span><span class="line"><span class="cl">repeat-y
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112101447940.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="no-repeat"
+	
+	
+></p>
+<h2 id="4background-position">4.background-position
+</h2><p>可以修改图片位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">background-position:x y;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">/*
+</span></span><span class="line"><span class="cl">参数分为两种
+</span></span><span class="line"><span class="cl">length 百分数
+</span></span><span class="line"><span class="cl">position 方位名词 top center bottom left center right
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">如果都是方位名词，与前后无关
+</span></span><span class="line"><span class="cl">如left top和top left
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">在一些情况下 想要精准
+</span></span><span class="line"><span class="cl">也可以通过精确坐标 d
+</span></span><span class="line"><span class="cl">*/
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5background-attachment">5.background-attachment
+</h2><p>背景固定  背景附着</p>
+<p>这个设置设置背景图片是否固定还是滚动</p>
+<p>scroll为滚动<br>
+fixed为固定</p>
+<h2 id="6背景属性混合写法">6背景属性混合写法
+</h2><p>前五个复合写法可以像font一样节约代码量</p>
+<p>一般没有要求但是，一般习惯写为一下</p>
+<p>background:背景颜色 背景图片 背景平铺 背景滚动 位置</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">background: red url() no-repeat fixed top;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7背景色半透明">7.背景色半透明
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">background:(0,0,0,alpht)
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112121915735.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="7综合案例-五彩导航">7.综合案例 五彩导航
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span><span class="lnt">43
+</span><span class="lnt">44
+</span><span class="lnt">45
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;ie=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>综合案例-五彩导航<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">nav</span> <span class="nt">a</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">display</span><span class="p">:</span><span class="kc">inline-block</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">120</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">58</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-align</span><span class="p">:</span> <span class="kc">center</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="mh">#fff</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">text-decoration</span><span class="p">:</span> <span class="kc">none</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">line-height</span><span class="p">:</span> <span class="mi">48</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">nav</span> <span class="p">.</span><span class="nc">bg1</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">images/bg1.png</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">nav</span> <span class="p">.</span><span class="nc">bg2</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">images/bg2.png</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">nav</span> <span class="p">.</span><span class="nc">bg1</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">images/bg11.png</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">nav</span> <span class="p">.</span><span class="nc">bg2</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">background-image</span><span class="p">:</span> <span class="nb">url</span><span class="p">(</span><span class="sx">images/bg22.png</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;nav&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bg1&#34;</span><span class="p">&gt;</span>五彩导航<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;bg2&#34;</span><span class="p">&gt;</span>五彩导航<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>五彩导航<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>五彩导航<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#&#34;</span><span class="p">&gt;</span>五彩导航<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112122148579.gif"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="9css三大特征">9.CSS三大特征
+</h1><h2 id="1层叠性">1.层叠性
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">royalblue</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">50</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span><span class="kc">seagreen</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        大江东去
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这里div有三个选择</p>
+<p>但是只执行的只有fintsize和最后一个color</p>
+<ul>
+<li>就近原则，哪个近就执行哪个</li>
+<li>样态不冲突 不会重叠</li>
+</ul>
+<h2 id="2继承性">2.继承性
+</h2><p>现实的继承 我们继承了父亲的姓</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>龙生龙,凤生凤,老鼠生的孩子会打洞<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>p继承了父div的性质</p>
+<p>继承性就是简化代码 降低复杂性text font line</p>
+<h2 id="行高的继承"><strong>行高的继承</strong>
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;viewport&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;width=device-width, initial-scale=1.0&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">http-equiv</span><span class="o">=</span><span class="s">&#34;X-UA-Compatible&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;ie=edge&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>行高的继承<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">body</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* font: 12px/24px &#39;Microsoft YaHei&#39;; */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font</span><span class="p">:</span> <span class="mi">12</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* 子元素继承了父元素 body 的行高 1.5 */</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* 这个1.5 就是当前元素文字大小 font-size 的1.5倍   所以当前div 的行高就是21像素 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">14</span><span class="kt">px</span><span class="p">;</span> 
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">p</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* 1.5 * 16 =  24 当前的行高 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">font-size</span><span class="p">:</span> <span class="mi">16</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="c">/* li 么有手动指定文字大小  则会继承父亲的 文字大小  body 12px 所以 li 的文字大小为 12px 
+</span></span></span><span class="line"><span class="cl"><span class="c">        
+</span></span></span><span class="line"><span class="cl"><span class="c">        当前li 的行高就是  12 * 1.5  =  18
+</span></span></span><span class="line"><span class="cl"><span class="c">        */</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span>粉红色的回忆<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>粉红色的回忆<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>我没有指定文字大小<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3优先性">3.优先性
+</h2><ul>
+<li>选择器相同 则执行层叠层</li>
+<li>不同 根据选择器权重决定</li>
+</ul>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112122202837.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">       
+</span></span><span class="line"><span class="cl">        <span class="p">.</span><span class="nc">test</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">pink</span><span class="cp">!important</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">        <span class="p">#</span><span class="nn">demo</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">color</span><span class="p">:</span> <span class="kc">green</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&#34;test&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;demo&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color: purple&#34;</span><span class="p">&gt;</span>你笑起来真好看<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="10盒子模型超重点box-model">10.<strong>盒子模型</strong>（超重点）Box Model
+</h1><p>学习页面布局有三大模型</p>
+<p>盒子 浮动 定位</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">盒子中要有
+</span></span><span class="line"><span class="cl">border边框
+</span></span><span class="line"><span class="cl">content内容
+</span></span><span class="line"><span class="cl">padding内边距
+</span></span><span class="line"><span class="cl">margin外边距
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112122211209.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="1border边框">1.border边框
+</h2><p>border中有</p>
+<p>宽度 边框样态 颜色</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nt">div</span><span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">border-style</span><span class="p">:</span> <span class="kc">solid</span><span class="p">;</span><span class="c">/*solib实线 dashed 虚线 dotted点线边框*/</span>
+</span></span><span class="line"><span class="cl">        <span class="k">border-width</span><span class="p">:</span> <span class="mi">20</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="k">border-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">边框的复合写法 没有顺序
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="nt">div</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">            <span class="k">width</span><span class="p">:</span> <span class="mi">300</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">height</span><span class="p">:</span> <span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* border-width: 5px;
+</span></span></span><span class="line"><span class="cl"><span class="c">            border-style: solid;
+</span></span></span><span class="line"><span class="cl"><span class="c">            border-color: pink; */</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* 边框的复合写法 简写:  */</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* border: 5px solid pink; */</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* 上边框 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border-top</span><span class="p">:</span> <span class="mi">5</span><span class="kt">px</span> <span class="kc">solid</span> <span class="kc">pink</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="c">/* 下边框 */</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border-bottom</span><span class="p">:</span> <span class="mi">10</span><span class="kt">px</span> <span class="kc">dashed</span> <span class="kc">purple</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">            <span class="k">border</span><span class="p">:</span><span class="kc">red</span> <span class="mi">5</span><span class="kt">px</span> <span class="kc">solid</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">style</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220326145143.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="2padding内边距">2.padding内边距
+</h2><p>padding控制内边距<img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220326150257.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">   div {
+</span></span><span class="line"><span class="cl">            width: 300px;
+</span></span><span class="line"><span class="cl">            height: 160px;
+</span></span><span class="line"><span class="cl">            background-color: pink;
+</span></span><span class="line"><span class="cl">            padding-top: 20px;
+</span></span><span class="line"><span class="cl">            padding-left: 22px;
+</span></span><span class="line"><span class="cl">            padding-right: 22px;
+</span></span><span class="line"><span class="cl">        }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220326151856.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>padding影响了盒子的大小 会撑大盒子</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220326180758.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">        .nav {
+</span></span><span class="line"><span class="cl">            height: 41px;
+</span></span><span class="line"><span class="cl">            border-top: 3px solid red;
+</span></span><span class="line"><span class="cl">            border-bottom: 1px solid beige;
+</span></span><span class="line"><span class="cl">            background-color: #fcfcfc;
+</span></span><span class="line"><span class="cl">            line-height: 41px;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        .nav a {
+</span></span><span class="line"><span class="cl">            display: inline-block;
+</span></span><span class="line"><span class="cl">            font-size: 12px;
+</span></span><span class="line"><span class="cl">            color: blue;
+</span></span><span class="line"><span class="cl">            text-decoration: none;
+</span></span><span class="line"><span class="cl">            padding: 0 20px;
+</span></span><span class="line"><span class="cl">            height: 41px;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">        }
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3margin外边距">3.margin外边距
+</h2><p>两个盒子的距离</p>
+<p>还是和内边距相似</p>
+<p>top right bottom left</p>
+<p>外边距作用为水平居中</p>
+<ol>
+<li>指定宽度</li>
+<li>盒子左右外边距为auto</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">margin-left:auto;margin-right:auto;
+</span></span><span class="line"><span class="cl">margin:auto;
+</span></span><span class="line"><span class="cl">margin:0 auto;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>行内和行内块用text-alignLcenter</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220326214217.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220326230226.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="11浮动float">11.浮动float
+</h1><p>传统网页布局三种方式</p>
+<p>普通流 浮动 定位</p>
+<p>标准流（普通 文档）按照标签规定默认排序</p>
+<p>块单独一行 从上香下排序又div hr h1-h6 ui ol form table</p>
+<p>行内按照左右排序如 span a i em</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220327225550.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220327230720.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220329215409.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>3浮动元素具有行内吧块元素特征</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220329221132.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">  &lt;style&gt;
+</span></span><span class="line"><span class="cl">        * {
+</span></span><span class="line"><span class="cl">            margin: 0;
+</span></span><span class="line"><span class="cl">            padding: 0;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        li {
+</span></span><span class="line"><span class="cl">            list-style: none;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        .box {
+</span></span><span class="line"><span class="cl">            width: 1226px;
+</span></span><span class="line"><span class="cl">            height: 285px;
+</span></span><span class="line"><span class="cl">            background-color: pink;
+</span></span><span class="line"><span class="cl">            margin: 0 auto;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        .box li {
+</span></span><span class="line"><span class="cl">            width: 296px;
+</span></span><span class="line"><span class="cl">            height: 285px;
+</span></span><span class="line"><span class="cl">            background-color: purple;
+</span></span><span class="line"><span class="cl">            float: left;
+</span></span><span class="line"><span class="cl">            margin-right: 14px;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">        .box .last {
+</span></span><span class="line"><span class="cl">            margin-right: 0;
+</span></span><span class="line"><span class="cl">        }
+</span></span><span class="line"><span class="cl">    &lt;/style&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">    &lt;ul class=&#34;box&#34;&gt;
+</span></span><span class="line"><span class="cl">        &lt;li&gt;1&lt;/li&gt;
+</span></span><span class="line"><span class="cl">        &lt;li&gt;2&lt;/li&gt;
+</span></span><span class="line"><span class="cl">        &lt;li&gt;3&lt;/li&gt;
+</span></span><span class="line"><span class="cl">        &lt;li class=&#34;last&#34;&gt;4&lt;/li&gt;
+</span></span><span class="line"><span class="cl">    &lt;/ul&gt;
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220329224816.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330082040.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="清除浮动">清除浮动
+</h2><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330083325.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330083417.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330083739.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330084151.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330084342.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330084416.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="12定位">12定位
+</h1><p>有些效果无法用标准流和浮动，这时候要用定位</p>
+<p>浮动可以让多个块级元素在一行没有空袭</p>
+<p>定位用于自由控制盒子</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330094452.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330094715.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="1static静态定位">1static静态定位
+</h2><p>没有边偏移</p>
+<h2 id="2relative相对定位">2relative相对定位
+</h2><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220330110943.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="3absolute绝对定位">3absolute绝对定位
+</h2><p>子绝父相</p>
+<p>对定位</p>
+<p>子绝父相</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/css/">CSS</a>
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/post/48593/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112111537490.png" loading="lazy" data-key="48593" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112111537490.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Html基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/1364342007/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">云服务器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/9dafd965/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">linux学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/1364342167/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaWeb笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/16977/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220729003418.png" loading="lazy" data-key="16977" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220729003418.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySql基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: '',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+  <div class="footer-container">
+
+    
+    <div class="footer-line">
+      © 
+      
+        2021 – 2025
+      
+      <span class="site-name">Example Person</span>
+    </div>
+
+    
+    
+    
+    
+    
+
+    <div class="footer-line stats">
+      发布了 33 篇文章 · 共 11.0 万字
+    </div>
+
+    
+    <div class="footer-line powered">
+      
+    </div>
+      
+使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建||       
+主题 <b><a href="https://github.com/kagurasoul/hugo-theme-stack-kagura" target="_blank" rel="noopener" data-version="3.32.0">Stack-kagura</a></b> 由 <a href="https://github.com/kagurasoul" target="_blank" rel="noopener">kagurasoul</a> 修改
+
+  </div>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.684e1f482c506a2d9482ab16c2c5b44a0159091a06e5058c62b7178e79d320d5.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

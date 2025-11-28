@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>Swift on 神楽之魂的博客</title>
+        <link>http://localhost:1313/tags/swift/</link>
+        <description>Recent content in Swift on 神楽之魂的博客</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>zh-cn</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Fri, 21 Jan 2022 21:16:51 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/swift/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>swift学习笔记</title>
+        <link>http://localhost:1313/post/53084/</link>
+        <pubDate>Fri, 21 Jan 2022 21:16:51 +0000</pubDate>
+        
+        <guid>http://localhost:1313/post/53084/</guid>
+        <description>&lt;img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202202162044584.png" alt="Featured image of post swift学习笔记" /&gt;&lt;p&gt;乐，swift确实是一门好的语言，但是我恐怕没有时间学它&lt;/p&gt;
+&lt;!-- more --&gt;
+&lt;p&gt;时间学它&lt;/p&gt;
+&lt;!-- more --&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

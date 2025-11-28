@@ -1,0 +1,3186 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="1\rmysql\rSQL 语句可以单行或多行书写，以分号结尾。MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。\n同样的一条sql语句写成下图的样子，一样可以运行处结果。单行注释: &ndash; 注释内容 或 #注释内容(MySQL 特有)\n">
+<title>JavaWeb笔记</title>
+
+<link rel='canonical' href='http://localhost:1313/post/1364342167/'>
+
+<link rel="stylesheet" href="/scss/style.min.2ead26fa5df18ee63e8b93c4633f8c6957743eb13c8ba990934545fa8186c5ac.css"><meta property='og:title' content="JavaWeb笔记">
+<meta property='og:description' content="1\rmysql\rSQL 语句可以单行或多行书写，以分号结尾。MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。\n同样的一条sql语句写成下图的样子，一样可以运行处结果。单行注释: &ndash; 注释内容 或 #注释内容(MySQL 特有)\n">
+<meta property='og:url' content='http://localhost:1313/post/1364342167/'>
+<meta property='og:site_name' content='神楽之魂的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='后端' /><meta property='article:tag' content='Javaweb' /><meta property='article:published_time' content='2022-09-15T20:41:35&#43;00:00'/><meta property='article:modified_time' content='2022-09-15T20:41:35&#43;00:00'/>
+<meta name="twitter:title" content="JavaWeb笔记">
+<meta name="twitter:description" content="1\rmysql\rSQL 语句可以单行或多行书写，以分号结尾。MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。\n同样的一条sql语句写成下图的样子，一样可以运行处结果。单行注释: &ndash; 注释内容 或 #注释内容(MySQL 特有)\n">
+    <link rel="shortcut icon" href="/img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_7c008adc2b535ffc.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">神楽之魂的博客</a></h1>
+            <h2 class="site-description">C&#39;est la vie</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Kaguranotamashii'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/ja/" >日本語</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1">1</a></li>
+    <li><a href="#mysql">mysql</a>
+      <ol>
+        <li><a href="#sql分类">sql分类</a></li>
+        <li><a href="#ddl">DDL</a>
+          <ol>
+            <li><a href="#数据类型">数据类型</a></li>
+            <li><a href="#删除表">删除表</a></li>
+          </ol>
+        </li>
+        <li><a href="#dml">DML</a>
+          <ol>
+            <li><a href="#添加数据">添加数据</a></li>
+            <li><a href="#修改数据">修改数据</a></li>
+            <li><a href="#删除数据">删除数据</a></li>
+          </ol>
+        </li>
+        <li><a href="#dql">DQL</a>
+          <ol>
+            <li><a href="#基础查询">基础查询</a>
+              <ol>
+                <li><a href="#语法">语法</a></li>
+                <li><a href="#练习">练习</a></li>
+              </ol>
+            </li>
+            <li><a href="#条件查询">条件查询</a>
+              <ol>
+                <li><a href="#语法-1">语法</a></li>
+                <li><a href="#条件查询练习">条件查询练习</a></li>
+                <li><a href="#模糊查询练习">模糊查询练习</a></li>
+              </ol>
+            </li>
+            <li><a href="#排序查询">排序查询</a>
+              <ol>
+                <li><a href="#语法-2">语法</a></li>
+                <li><a href="#练习-1">练习</a></li>
+              </ol>
+            </li>
+            <li><a href="#聚合函数">聚合函数</a>
+              <ol>
+                <li><a href="#概念">概念</a></li>
+                <li><a href="#842-聚合函数分类">8.4.2 聚合函数分类</a></li>
+                <li><a href="#843-聚合函数语法">8.4.3 聚合函数语法</a></li>
+                <li><a href="#844-练习">8.4.4 练习</a></li>
+              </ol>
+            </li>
+            <li><a href="#分组查询">分组查询</a>
+              <ol>
+                <li><a href="#语法-3">语法</a></li>
+                <li><a href="#练习-2">练习</a></li>
+              </ol>
+            </li>
+            <li><a href="#86-分页查询">8.6 分页查询</a>
+              <ol>
+                <li><a href="#861-语法">8.6.1 语法</a></li>
+                <li><a href="#862-练习">8.6.2 练习</a></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+        <li><a href="#约束">约束</a></li>
+      </ol>
+    </li>
+    <li><a href="#java网络编程">java网络编程</a></li>
+    <li><a href="#jdbc">JDBC</a>
+      <ol>
+        <li><a href="#快速入门">快速入门</a></li>
+      </ol>
+    </li>
+    <li><a href="#maven">Maven</a>
+      <ol>
+        <li><a href="#maven模型">Maven模型</a></li>
+        <li><a href="#maven-坐标详解">Maven 坐标详解</a></li>
+        <li><a href="#依赖管理">依赖管理</a>
+          <ol>
+            <li><a href="#使用坐标引入jar包">使用坐标引入jar包</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#快速入门mybatis">快速入门mybatis</a>
+      <ol>
+        <li>
+          <ol>
+            <li><a href="#创建模块导入坐标">创建模块，导入坐标</a></li>
+            <li><a href="#目录下创建mybatis的配置文件">目录下创建mybatis的配置文件</a></li>
+            <li><a href="#编写-sql-映射文件">编写 SQL 映射文件</a></li>
+            <li><a href="#编码">编码</a></li>
+          </ol>
+        </li>
+        <li><a href="#mapper代理开发">Mapper代理开发</a></li>
+        <li><a href="#tomcat">TOMCAT</a></li>
+        <li><a href="#tomcat-maven插件">Tomcat Maven插件</a></li>
+      </ol>
+    </li>
+    <li><a href="#jsp">jsp</a>
+      <ol>
+        <li><a href="#mvc模式喝三层架构">mvc模式喝三层架构</a></li>
+      </ol>
+    </li>
+    <li><a href="#cookie和session">Cookie和Session</a>
+      <ol>
+        <li><a href="#cookie的基本使用">Cookie的基本使用</a></li>
+        <li><a href="#session的基本使用">Session的基本使用</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                技术笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/1364342167/">JavaWeb笔记</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2022-09-15T20:41:35Z'>Sep 15, 2022</time>
+            </div>
+        
+
+        
+
+
+
+
+
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 24 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <h1 id="1">1
+</h1><h1 id="mysql">mysql
+</h1><p>SQL 语句可以单行或多行书写，以分号结尾。MySQL 数据库的 SQL 语句不区分大小写，关键字建议使用大写。</p>
+<p>同样的一条sql语句写成下图的样子，一样可以运行处结果。单行注释: &ndash; 注释内容 或 #注释内容(MySQL 特有)</p>
+<h2 id="sql分类">sql分类
+</h2><ul>
+<li>
+<p>DDL(Data Definition Language) ： 数据定义语言，用来定义数据库对象：数据库，表，列等</p>
+<p>DDL简单理解就是用来操作数据库，表等</p>
+<p><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210721220032047.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210721220032047"
+	
+	
+></p>
+</li>
+<li>
+<p>DML(Data Manipulation Language) 数据操作语言，用来对数据库中表的数据进行增删改</p>
+<p>DML简单理解就对表中数据进行增删改</p>
+<p><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210721220132919.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210721220132919"
+	
+	
+></p>
+</li>
+<li>
+<p>DQL(Data Query Language) 数据查询语言，用来查询数据库中表的记录(数据)</p>
+<p>DQL简单理解就是对数据进行查询操作。从数据库表中查询到我们想要的数据。</p>
+</li>
+<li>
+<p>DCL(Data Control Language) 数据控制语言，用来定义数据库的访问权限和安全级别，及创建用户</p>
+<p>DML简单理解就是对数据库进行权限控制。比如我让某一个数据库表只能让某一个用户进行操作等。</p>
+</li>
+</ul>
+<h2 id="ddl">DDL
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">SHOW</span><span class="w"> </span><span class="k">DATABASES</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1"># 创建数据库(判断，如果不存在则创建)
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">CREATE</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">DROP</span><span class="w"> </span><span class="k">DATABASE</span><span class="w"> </span><span class="k">IF</span><span class="w"> </span><span class="k">EXISTS</span><span class="w"> </span><span class="err">数据库名称</span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>数据库创建好了，要在数据库中创建表，得先明确在哪儿个数据库中操作，此时就需要使用数据库。</p>
+<ul>
+<li><strong>使用数据库</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">USE 数据库名称;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>查看当前使用的数据库</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT DATABASE();
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>运行语句效果如下：</p>
+<h3 id="数据类型">数据类型
+</h3><p>MySQL 支持多种类型，可以分为三类：</p>
+<ul>
+<li>
+<p>数值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tinyint : 小整数型，占一个字节
+</span></span><span class="line"><span class="cl">int	： 大整数类型，占四个字节
+</span></span><span class="line"><span class="cl">	eg ： age int
+</span></span><span class="line"><span class="cl">double ： 浮点类型
+</span></span><span class="line"><span class="cl">	使用格式： 字段名 double(总长度,小数点后保留的位数)
+</span></span><span class="line"><span class="cl">	eg ： score double(5,2)   
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>日期</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">date ： 日期值。只包含年月日
+</span></span><span class="line"><span class="cl">	eg ：birthday date ： 
+</span></span><span class="line"><span class="cl">datetime ： 混合日期和时间值。包含年月日时分秒
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>字符串</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">char</span> <span class="err">：</span> <span class="err">定长字符串。</span>
+</span></span><span class="line"><span class="cl">	<span class="err">优点：存储性能高</span>
+</span></span><span class="line"><span class="cl">	<span class="err">缺点：浪费空间</span>
+</span></span><span class="line"><span class="cl">	<span class="n">eg</span> <span class="err">：</span> <span class="n">name</span> <span class="n">char</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>  <span class="err">如果存储的数据字符个数不足</span><span class="mi">10</span><span class="err">个，也会占</span><span class="mi">10</span><span class="err">个的空间</span>
+</span></span><span class="line"><span class="cl"><span class="n">varchar</span> <span class="err">：</span> <span class="err">变长字符串。</span>
+</span></span><span class="line"><span class="cl">	<span class="err">优点：节约空间</span>
+</span></span><span class="line"><span class="cl">	<span class="err">缺点：存储性能底</span>
+</span></span><span class="line"><span class="cl">	<span class="n">eg</span> <span class="err">：</span> <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="err">如果存储的数据字符个数不足</span><span class="mi">10</span><span class="err">个，那就数据字符个数是几就占几个的空间</span>	
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<blockquote>
+<p>注意：其他类型参考资料中的《MySQL数据类型].xlsx》</p>
+</blockquote>
+<p><strong>案例：</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">需求：设计一张学生表，请注重数据类型、长度的合理性
+</span></span><span class="line"><span class="cl">	1. 编号
+</span></span><span class="line"><span class="cl">	2. 姓名，姓名最长不超过10个汉字
+</span></span><span class="line"><span class="cl">	3. 性别，因为取值只有两种可能，因此最多一个汉字
+</span></span><span class="line"><span class="cl">	4. 生日，取值为年月日
+</span></span><span class="line"><span class="cl">	5. 入学成绩，小数点后保留两位
+</span></span><span class="line"><span class="cl">	6. 邮件地址，最大长度不超过 64
+</span></span><span class="line"><span class="cl">	7. 家庭联系电话，不一定是手机号码，可能会出现 - 等字符
+</span></span><span class="line"><span class="cl">	8. 学生状态（用数字表示，正常、休学、毕业...）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>语句设计如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">create</span> <span class="n">table</span> <span class="n">student</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">	<span class="n">id</span> <span class="ne">int</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">10</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">gender</span> <span class="n">char</span><span class="p">(</span><span class="mi">1</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">birthday</span> <span class="n">date</span><span class="p">,</span>
+</span></span><span class="line"><span class="cl">    <span class="n">score</span> <span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">email</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">tel</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">15</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl">    <span class="n">status</span> <span class="n">tinyint</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="删除表">删除表
+</h3><ul>
+<li>**
+修改表名**</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ALTER TABLE 表名 RENAME TO 新的表名;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 将表名student修改为stu
+</span></span><span class="line"><span class="cl">alter table student rename to stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>添加一列</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="err">表名</span> <span class="n">ADD</span> <span class="err">列名</span> <span class="err">数据类型</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">--</span> <span class="err">给</span><span class="n">stu表添加一列address</span><span class="err">，该字段类型是</span><span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">alter</span> <span class="n">table</span> <span class="n">stu</span> <span class="n">add</span> <span class="n">address</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>修改数据类型</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ALTER TABLE 表名 MODIFY 列名 新数据类型;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 将stu表中的address字段的类型改为 char(50)
+</span></span><span class="line"><span class="cl">alter table stu modify address char(50);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>修改列名和数据类型</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="n">ALTER</span> <span class="n">TABLE</span> <span class="err">表名</span> <span class="n">CHANGE</span> <span class="err">列名</span> <span class="err">新列名</span> <span class="err">新数据类型</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">--</span> <span class="err">将</span><span class="n">stu表中的address字段名改为</span> <span class="n">addr</span><span class="err">，类型改为</span><span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="n">alter</span> <span class="n">table</span> <span class="n">stu</span> <span class="n">change</span> <span class="n">address</span> <span class="n">addr</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">50</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>删除列</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">ALTER TABLE 表名 DROP 列名;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 将stu表中的addr字段 删除
+</span></span><span class="line"><span class="cl">alter table stu drop addr;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dml">DML
+</h2><p>DML主要是对数据进行增（insert）删（delete）改（update）操作。</p>
+<h3 id="添加数据">添加数据
+</h3><ul>
+<li><strong>给指定列添加数据</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">INSERT INTO 表名(列名1,列名2,…) VALUES(值1,值2,…);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>给全部列添加数据</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">INSERT INTO 表名 VALUES(值1,值2,…);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>批量添加数据</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">INSERT INTO 表名(列名1,列名2,…) VALUES(值1,值2,…),(值1,值2,…),(值1,值2,…)…;
+</span></span><span class="line"><span class="cl">INSERT INTO 表名 VALUES(值1,值2,…),(值1,值2,…),(值1,值2,…)…;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>练习</strong></li>
+</ul>
+<p>为了演示以下的增删改操作是否操作成功，故先将查询所有数据的语句介绍给大家：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-mysql" data-lang="mysql"><span class="line"><span class="cl"><span class="k">select</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">stu</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 给指定列添加数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">stu</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="w"> </span><span class="n">NAME</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;张三&#39;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 给所有列添加数据，列名的列表可以省略的
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="nf">stu</span><span class="w"> </span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">sex</span><span class="p">,</span><span class="n">birthday</span><span class="p">,</span><span class="n">score</span><span class="p">,</span><span class="n">email</span><span class="p">,</span><span class="n">tel</span><span class="p">,</span><span class="n">STATUS</span><span class="p">)</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1999-11-11&#39;</span><span class="p">,</span><span class="mi">88</span><span class="p">.</span><span class="mi">88</span><span class="p">,</span><span class="s1">&#39;lisi@itcast.cn&#39;</span><span class="p">,</span><span class="s1">&#39;13888888888&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">stu</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1999-11-11&#39;</span><span class="p">,</span><span class="mi">88</span><span class="p">.</span><span class="mi">88</span><span class="p">,</span><span class="s1">&#39;lisi@itcast.cn&#39;</span><span class="p">,</span><span class="s1">&#39;13888888888&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c1">-- 批量添加数据
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">stu</span><span class="w"> </span><span class="k">VALUES</span><span class="w"> 
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1999-11-11&#39;</span><span class="p">,</span><span class="mi">88</span><span class="p">.</span><span class="mi">88</span><span class="p">,</span><span class="s1">&#39;lisi@itcast.cn&#39;</span><span class="p">,</span><span class="s1">&#39;13888888888&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1999-11-11&#39;</span><span class="p">,</span><span class="mi">88</span><span class="p">.</span><span class="mi">88</span><span class="p">,</span><span class="s1">&#39;lisi@itcast.cn&#39;</span><span class="p">,</span><span class="s1">&#39;13888888888&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">),</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">	</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;李四&#39;</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;1999-11-11&#39;</span><span class="p">,</span><span class="mi">88</span><span class="p">.</span><span class="mi">88</span><span class="p">,</span><span class="s1">&#39;lisi@itcast.cn&#39;</span><span class="p">,</span><span class="s1">&#39;13888888888&#39;</span><span class="p">,</span><span class="mi">1</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="修改数据">修改数据
+</h3><ul>
+<li><strong>修改表数据</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">UPDATE 表名 SET 列名1=值1,列名2=值2,… [WHERE 条件] ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意：</p>
+<ol>
+<li>修改语句中如果不加条件，则将所有数据都修改！</li>
+<li>像上面的语句中的中括号，表示在写sql语句中可以省略这部分</li>
+</ol>
+</blockquote>
+<ul>
+<li>
+<p><strong>练习</strong></p>
+<ul>
+<li>将张三的性别改为女</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update stu set sex = &#39;女&#39; where name = &#39;张三&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>将张三的生日改为 1999-12-12 分数改为99.99</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update stu set birthday = &#39;1999-12-12&#39;, score = 99.99 where name = &#39;张三&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>注意：如果update语句没有加where条件，则会将表中所有数据全部修改！</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">update stu set sex = &#39;女&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面语句的执行完后查询到的结果是：</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722204233305.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722204233305.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722204233305"
+	
+	
+></a></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="删除数据">删除数据
+</h3><ul>
+<li><strong>删除数据</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">DELETE FROM 表名 [WHERE 条件] ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>练习</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">-- 删除张三记录
+</span></span><span class="line"><span class="cl">delete from stu where name = &#39;张三&#39;;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">-- 删除stu表中所有的数据
+</span></span><span class="line"><span class="cl">delete from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="dql">DQL
+</h2><p>下面是黑马程序员展示试题库数据的页面</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722215838144.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722215838144.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722215838144"
+	
+	
+></a></p>
+<p>页面上展示的数据肯定是在数据库中的试题库表中进行存储，而我们需要将数据库中的数据查询出来并展示在页面给用户看。上图中的是最基本的查询效果，那么数据库其实是很多的，不可能在将所有的数据在一页进行全部展示，而页面上会有分页展示的效果，如下：</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722220139174.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722220139174.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722220139174"
+	
+	
+></a></p>
+<p>当然上图中的难度字段当我们点击也可以实现排序查询操作。从这个例子我们就可以看出，对于数据库的查询时灵活多变的，需要根据具体的需求来实现，而数据库查询操作也是最重要的操作，所以此部分需要大家重点掌握。</p>
+<p>接下来我们先介绍查询的完整语法：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 
+</span></span><span class="line"><span class="cl">    字段列表
+</span></span><span class="line"><span class="cl">FROM 
+</span></span><span class="line"><span class="cl">    表名列表 
+</span></span><span class="line"><span class="cl">WHERE 
+</span></span><span class="line"><span class="cl">    条件列表
+</span></span><span class="line"><span class="cl">GROUP BY
+</span></span><span class="line"><span class="cl">    分组字段
+</span></span><span class="line"><span class="cl">HAVING
+</span></span><span class="line"><span class="cl">    分组后条件
+</span></span><span class="line"><span class="cl">ORDER BY
+</span></span><span class="line"><span class="cl">    排序字段
+</span></span><span class="line"><span class="cl">LIMIT
+</span></span><span class="line"><span class="cl">    分页限定
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>为了给大家演示查询的语句，我们需要先准备表及一些数据：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-gdscript3" data-lang="gdscript3"><span class="line"><span class="cl"><span class="o">--</span> <span class="err">删除</span><span class="n">stu表</span>
+</span></span><span class="line"><span class="cl"><span class="n">drop</span> <span class="n">table</span> <span class="k">if</span> <span class="n">exists</span> <span class="n">stu</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">--</span> <span class="err">创建</span><span class="n">stu表</span>
+</span></span><span class="line"><span class="cl"><span class="n">CREATE</span> <span class="n">TABLE</span> <span class="n">stu</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl"> <span class="n">id</span> <span class="ne">int</span><span class="p">,</span> <span class="o">--</span> <span class="err">编号</span>
+</span></span><span class="line"><span class="cl"> <span class="n">name</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">),</span> <span class="o">--</span> <span class="err">姓名</span>
+</span></span><span class="line"><span class="cl"> <span class="n">age</span> <span class="ne">int</span><span class="p">,</span> <span class="o">--</span> <span class="err">年龄</span>
+</span></span><span class="line"><span class="cl"> <span class="n">sex</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">5</span><span class="p">),</span> <span class="o">--</span> <span class="err">性别</span>
+</span></span><span class="line"><span class="cl"> <span class="n">address</span> <span class="n">varchar</span><span class="p">(</span><span class="mi">100</span><span class="p">),</span> <span class="o">--</span> <span class="err">地址</span>
+</span></span><span class="line"><span class="cl"> <span class="n">math</span> <span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="o">--</span> <span class="err">数学成绩</span>
+</span></span><span class="line"><span class="cl"> <span class="n">english</span> <span class="n">double</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="o">--</span> <span class="err">英语成绩</span>
+</span></span><span class="line"><span class="cl"> <span class="n">hire_date</span> <span class="n">date</span> <span class="o">--</span> <span class="err">入学时间</span>
+</span></span><span class="line"><span class="cl"><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">--</span> <span class="err">添加数据</span>
+</span></span><span class="line"><span class="cl"><span class="n">INSERT</span> <span class="n">INTO</span> <span class="n">stu</span><span class="p">(</span><span class="n">id</span><span class="p">,</span><span class="n">NAME</span><span class="p">,</span><span class="n">age</span><span class="p">,</span><span class="n">sex</span><span class="p">,</span><span class="n">address</span><span class="p">,</span><span class="n">math</span><span class="p">,</span><span class="n">english</span><span class="p">,</span><span class="n">hire_date</span><span class="p">)</span> 
+</span></span><span class="line"><span class="cl"><span class="n">VALUES</span> 
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="s1">&#39;马运&#39;</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;杭州&#39;</span><span class="p">,</span><span class="mi">66</span><span class="p">,</span><span class="mi">78</span><span class="p">,</span><span class="s1">&#39;1995-09-01&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">2</span><span class="p">,</span><span class="s1">&#39;马花疼&#39;</span><span class="p">,</span><span class="mi">45</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="s1">&#39;深圳&#39;</span><span class="p">,</span><span class="mi">98</span><span class="p">,</span><span class="mi">87</span><span class="p">,</span><span class="s1">&#39;1998-09-01&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="s1">&#39;马斯克&#39;</span><span class="p">,</span><span class="mi">55</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;香港&#39;</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">77</span><span class="p">,</span><span class="s1">&#39;1999-09-02&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="s1">&#39;柳白&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="s1">&#39;湖南&#39;</span><span class="p">,</span><span class="mi">76</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="s1">&#39;1997-09-05&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="s1">&#39;柳青&#39;</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;湖南&#39;</span><span class="p">,</span><span class="mi">86</span><span class="p">,</span><span class="n">NULL</span><span class="p">,</span><span class="s1">&#39;1998-09-01&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">6</span><span class="p">,</span><span class="s1">&#39;刘德花&#39;</span><span class="p">,</span><span class="mi">57</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;香港&#39;</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="s1">&#39;1998-09-01&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">7</span><span class="p">,</span><span class="s1">&#39;张学右&#39;</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="s1">&#39;女&#39;</span><span class="p">,</span><span class="s1">&#39;香港&#39;</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="mi">99</span><span class="p">,</span><span class="s1">&#39;1998-09-01&#39;</span><span class="p">),</span>
+</span></span><span class="line"><span class="cl"><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="s1">&#39;德玛西亚&#39;</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="s1">&#39;男&#39;</span><span class="p">,</span><span class="s1">&#39;南京&#39;</span><span class="p">,</span><span class="mi">56</span><span class="p">,</span><span class="mi">65</span><span class="p">,</span><span class="s1">&#39;1994-09-02&#39;</span><span class="p">);</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>接下来咱们从最基本的查询语句开始学起。</p>
+<h3 id="基础查询">基础查询
+</h3><h4 id="语法">语法
+</h4><ul>
+<li><strong>查询多个字段</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 字段列表 FROM 表名;
+</span></span><span class="line"><span class="cl">SELECT * FROM 表名; -- 查询所有数据
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>去除重复记录</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT DISTINCT 字段列表 FROM 表名;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>起别名</strong></li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">AS: AS 也可以省略
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="练习">练习
+</h4><ul>
+<li>
+<p>查询name、age两列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select name,age from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询所有列的数据，列名的列表可以使用*替代</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面语句中的<em>不建议大家使用，因为在这写</em>不方便我们阅读sql语句。我们写字段列表的话，可以添加注释对每一个字段进行说明</p>
+<p><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722221534870.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722221534870"
+	
+	
+></p>
+<p>而在上课期间为了简约课程的时间，老师很多地方都会写*。</p>
+</li>
+<li>
+<p>查询地址信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select address from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>执行上面语句结果如下：</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722221756380.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722221756380.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722221756380"
+	
+	
+></a></p>
+<p>从上面的结果我们可以看到有重复的数据，我们也可以使用 <code>distinct</code> 关键字去重重复数据。</p>
+</li>
+<li>
+<p>去除重复记录</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select distinct address from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询姓名、数学成绩、英语成绩。并通过as给math和english起别名（as关键字可以省略）</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select name,math as 数学成绩,english as 英文成绩 from stu;
+</span></span><span class="line"><span class="cl">select name,math 数学成绩,english 英文成绩 from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="条件查询">条件查询
+</h3><h4 id="语法-1">语法
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 字段列表 FROM 表名 WHERE 条件列表;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li><strong>条件</strong></li>
+</ul>
+<p>条件列表可以使用以下运算符</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722190508272.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722190508272.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722190508272"
+	
+	
+></a></p>
+<h4 id="条件查询练习">条件查询练习
+</h4><ul>
+<li>
+<p>查询年龄大于20岁的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age &gt; 20;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询年龄大于等于20岁的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age &gt;= 20;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询年龄大于等于20岁 并且 年龄 小于等于 30岁 的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age &gt;= 20 &amp;&amp;  age &lt;= 30;
+</span></span><span class="line"><span class="cl">select * from stu where age &gt;= 20 and  age &lt;= 30;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>上面语句中 &amp;&amp; 和 and 都表示并且的意思。建议使用 and 。</p>
+<p>也可以使用 between &hellip; and 来实现上面需求</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age BETWEEN 20 and 30;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询入学日期在'1998-09-01&rsquo; 到 &lsquo;1999-09-01&rsquo; 之间的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where hire_date BETWEEN &#39;1998-09-01&#39; and &#39;1999-09-01&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询年龄等于18岁的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age = 18;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询年龄不等于18岁的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age != 18;
+</span></span><span class="line"><span class="cl">select * from stu where age &lt;&gt; 18;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询年龄等于18岁 或者 年龄等于20岁 或者 年龄等于22岁的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where age = 18 or age = 20 or age = 22;
+</span></span><span class="line"><span class="cl">select * from stu where age in (18,20 ,22);
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询英语成绩为 null的学员信息</p>
+<p>null值的比较不能使用 = 或者 != 。需要使用 is 或者 is not</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where english = null; -- 这个语句是不行的
+</span></span><span class="line"><span class="cl">select * from stu where english is null;
+</span></span><span class="line"><span class="cl">select * from stu where english is not null;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h4 id="模糊查询练习">模糊查询练习
+</h4><blockquote>
+<p>模糊查询使用like关键字，可以使用通配符进行占位:</p>
+<p>（1）_ : 代表单个任意字符</p>
+<p>（2）% : 代表任意个数字符</p>
+</blockquote>
+<ul>
+<li>
+<p>查询姓&rsquo;马&rsquo;的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where name like &#39;马%&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询第二个字是&rsquo;花&rsquo;的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where name like &#39;_花%&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询名字中包含 &lsquo;德&rsquo; 的学员信息</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu where name like &#39;%德%&#39;;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="排序查询">排序查询
+</h3><h4 id="语法-2">语法
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 字段列表 FROM 表名 ORDER BY 排序字段名1 [排序方式1],排序字段名2 [排序方式2] …;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上述语句中的排序方式有两种，分别是：</p>
+<ul>
+<li>ASC ： 升序排列 <strong>（默认值）</strong></li>
+<li>DESC ： 降序排列</li>
+</ul>
+<blockquote>
+<p>注意：如果有多个排序条件，当前边的条件值一样时，才会根据第二条件进行排序</p>
+</blockquote>
+<h4 id="练习-1">练习
+</h4><ul>
+<li>
+<p>查询学生信息，按照年龄升序排列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu order by age ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询学生信息，按照数学成绩降序排列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu order by math desc ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询学生信息，按照数学成绩降序排列，如果数学成绩一样，再按照英语成绩升序排列</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu order by math desc , english asc ;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="聚合函数">聚合函数
+</h3><h4 id="概念">概念
+</h4><p>==将一列数据作为一个整体，进行纵向计算。==</p>
+<p>如何理解呢？假设有如下表</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722194410628.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722194410628.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722194410628"
+	
+	
+></a></p>
+<p>现有一需求让我们求表中所有数据的数学成绩的总和。这就是对math字段进行纵向求和。</p>
+<h4 id="842-聚合函数分类">8.4.2 聚合函数分类
+</h4><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>函数名</th>
+          <th>功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>count(列名)</td>
+          <td>统计数量（一般选用不为null的列）</td>
+      </tr>
+      <tr>
+          <td>max(列名)</td>
+          <td>最大值</td>
+      </tr>
+      <tr>
+          <td>min(列名)</td>
+          <td>最小值</td>
+      </tr>
+      <tr>
+          <td>sum(列名)</td>
+          <td>求和</td>
+      </tr>
+      <tr>
+          <td>avg(列名)</td>
+          <td>平均值</td>
+      </tr>
+  </tbody>
+</table></div>
+<h4 id="843-聚合函数语法">8.4.3 聚合函数语法
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 聚合函数名(列名) FROM 表;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意：null 值不参与所有聚合函数运算</p>
+</blockquote>
+<h4 id="844-练习">8.4.4 练习
+</h4><ul>
+<li>
+<p>统计班级一共有多少个学生</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select count(id) from stu;
+</span></span><span class="line"><span class="cl">select count(english) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>上面语句根据某个字段进行统计，如果该字段某一行的值为null的话，将不会被统计。所以可以在count(<em>) 来实现。</em> 表示所有字段数据，一行中也不可能所有的数据都为null，所以建议使用 count(*)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select count(*) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询数学成绩的最高分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select max(math) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询数学成绩的最低分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select min(math) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询数学成绩的总分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select sum(math) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询数学成绩的平均分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select avg(math) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询英语成绩的最低分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select min(english) from stu;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<h3 id="分组查询">分组查询
+</h3><h4 id="语法-3">语法
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 字段列表 FROM 表名 [WHERE 分组前条件限定] GROUP BY 分组字段名 [HAVING 分组后条件过滤];
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意：分组之后，查询的字段为聚合函数和分组字段，查询其他字段无任何意义</p>
+</blockquote>
+<h4 id="练习-2">练习
+</h4><ul>
+<li>
+<p>查询男同学和女同学各自的数学平均分</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select sex, avg(math) from stu group by sex;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意：分组之后，查询的字段为聚合函数和分组字段，查询其他字段无任何意义</p>
+</blockquote>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select name, sex, avg(math) from stu group by sex;  -- 这里查询name字段就没有任何意义
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询男同学和女同学各自的数学平均分，以及各自人数</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select sex, avg(math),count(*) from stu group by sex;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询男同学和女同学各自的数学平均分，以及各自人数，要求：分数低于70分的不参与分组</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select sex, avg(math),count(*) from stu where math &gt; 70 group by sex;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查询男同学和女同学各自的数学平均分，以及各自人数，要求：分数低于70分的不参与分组，分组之后人数大于2个的</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select sex, avg(math),count(*) from stu where math &gt; 70 group by sex having count(*)  &gt; 2;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><strong>where 和 having 区别：</strong></p>
+<ul>
+<li>执行时机不一样：where 是分组之前进行限定，不满足where条件，则不参与分组，而having是分组之后对结果进行过滤。</li>
+<li>可判断的条件不一样：where 不能对聚合函数进行判断，having 可以。</li>
+</ul>
+<h3 id="86-分页查询">8.6 分页查询
+</h3><p>如下图所示，大家在很多网站都见过类似的效果，如京东、百度、淘宝等。分页查询是将数据一页一页的展示给用户看，用户也可以通过点击查看下一页的数据。</p>
+<p><a class="link" href="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/blob/master/day01-MySQL%e5%9f%ba%e7%a1%80/ppt/assets/image-20210722230330366.png"  target="_blank" rel="noopener"
+    ><img src="https://github.com/Wj-00991314/JavaWebNotes_ItHeiMa/raw/master/day01-MySQL%E5%9F%BA%E7%A1%80/ppt/assets/image-20210722230330366.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="image-20210722230330366"
+	
+	
+></a></p>
+<p>接下来我们先说分页查询的语法。</p>
+<h4 id="861-语法">8.6.1 语法
+</h4><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">SELECT 字段列表 FROM 表名 LIMIT  起始索引 , 查询条目数;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><blockquote>
+<p>注意： 上述语句中的起始索引是从0开始</p>
+</blockquote>
+<h4 id="862-练习">8.6.2 练习
+</h4><ul>
+<li>
+<p>从0开始查询，查询3条数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu limit 0 , 3;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>每页显示3条数据，查询第1页数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu limit 0 , 3;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>每页显示3条数据，查询第2页数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu limit 3 , 3;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>每页显示3条数据，查询第3页数据</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">select * from stu limit 6 , 3;
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>从上面的练习推导出起始索引计算公式：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">起始索引 = (当前页码 - 1) * 每页显示的条数
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="约束">约束
+</h2><p>保证数据的正确性和完整性</p>
+<p>约束的分类</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20230101114414.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h1 id="java网络编程">java网络编程
+</h1><h1 id="jdbc">JDBC
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220928211854.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>JDBC   就是使用Java语言操作关系型数据库的一套API</p>
+<p>全称：( Java DataBase Connectivity ) Java 数据库连接</p>
+<ul>
+<li>
+<p>官方（sun公司）定义的一套操作所有关系型数据库的规则，即接口</p>
+</li>
+<li>
+<p>各个数据库厂商去实现这套接口，提供数据库驱动jar包</p>
+</li>
+<li>
+<p>我们可以使用这套接口（JDBC）编程，真正执行的代码是驱动jar包中的实现类</p>
+</li>
+<li>
+<p>各数据库厂商使用相同的接口，Java代码不需要针对不同数据库分别开发</p>
+</li>
+<li>
+<p>可随时替换底层数据库，访问数据库的Java代码基本不变</p>
+</li>
+</ul>
+<p>以后编写操作数据库的代码只需要面向JDBC（接口），操作哪儿个关系型数据库就需要导入该数据库的驱动包，如需要操作MySQL数据库，就需要再项目中导入MySQL数据库的驱动包。如下图就是MySQL驱动包</p>
+<h2 id="快速入门">快速入门
+</h2><p>第一步：编写Java代码</p>
+<p>第二步：Java代码将SQL发送到MySQL服务端</p>
+<p>第三步：MySQL服务端接收到SQL语句并执行该SQL语句</p>
+<p>第四步：将SQL语句执行的结果返回给Java代码</p>
+<ul>
+<li>
+<p>创建工程，导入驱动jar包</p>
+</li>
+<li>
+<p>注册驱动</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">Class</span><span class="p">.</span><span class="n">forName</span><span class="p">(</span><span class="s2">&#34;com.mysql.jdbc.Driver&#34;</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>获取连接</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">Connection</span><span class="w"> </span><span class="n">conn</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">DriverManager</span><span class="p">.</span><span class="n">getConnection</span><span class="p">(</span><span class="n">url</span><span class="p">,</span><span class="w"> </span><span class="n">username</span><span class="p">,</span><span class="w"> </span><span class="n">password</span><span class="p">);</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Java代码需要发送SQL给MySQL服务端，就需要先建立连接</p>
+</li>
+<li>
+<p>定义SQL语句</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">String</span><span class="w"> </span><span class="k">sql</span><span class="w"> </span><span class="o">=</span><span class="w">  </span><span class="err">“</span><span class="k">update</span><span class="err">…”</span><span class="w"> </span><span class="p">;</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>获取执行SQL对象</p>
+<p>执行SQL语句需要SQL执行对象，而这个执行对象就是Statement对象</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="k">Statement</span><span class="w"> </span><span class="n">stmt</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">conn</span><span class="p">.</span><span class="n">createStatement</span><span class="p">();</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>执行SQL</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-sql" data-lang="sql"><span class="line"><span class="cl"><span class="n">stmt</span><span class="p">.</span><span class="n">executeUpdate</span><span class="p">(</span><span class="k">sql</span><span class="p">);</span><span class="w">  
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>处理返回结果</p>
+</li>
+<li>
+<p>释放资源</p>
+</li>
+</ul>
+<h1 id="maven">Maven
+</h1><p>Maven是专门用于管理和构建Java项目的工具，它的主要功能有：</p>
+<ul>
+<li>
+<p>提供了一套标准化的项目结构</p>
+</li>
+<li>
+<p>提供了一套标准化的构建流程（编译，测试，打包，发布……）</p>
+</li>
+<li>
+<p>提供了一套依赖管理机制</p>
+</li>
+</ul>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20221019163934.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>我们开发了一套系统，代码需要进行编译、测试、打包、发布，这些操作如果需要反复进行就显得特别麻烦，而Maven提供了一套简单的命令来完成项目构建。</p>
+<h2 id="maven模型">Maven模型
+</h2><ul>
+<li>项目对象模型 (Project Object Model)</li>
+<li>依赖管理模型(Dependency)</li>
+<li>插件(Plugin)</li>
+</ul>
+<h2 id="maven-坐标详解">Maven 坐标详解
+</h2><p><strong>什么是坐标？</strong></p>
+<ul>
+<li>Maven 中的坐标是==资源的唯一标识==</li>
+<li>使用坐标来定义项目或引入项目中需要的依赖</li>
+</ul>
+<p><strong>Maven 坐标主要组成</strong></p>
+<ul>
+<li>groupId：定义当前Maven项目隶属组织名称（通常是域名反写，例如：com.itheima）</li>
+<li>artifactId：定义当前Maven项目名称（通常是模块名称，例如 order-service、goods-service）</li>
+<li>version：定义当前项目版本号</li>
+</ul>
+<p>如下图就是使用坐标表示一个项目：</p>
+<h2 id="依赖管理">依赖管理
+</h2><h3 id="使用坐标引入jar包">使用坐标引入jar包
+</h3><p><strong>使用坐标引入jar包的步骤：</strong></p>
+<ul>
+<li>
+<p>在项目的 pom.xml 中编写 <dependencies> 标签</p>
+</li>
+<li>
+<p>在 <dependencies> 标签中 使用 <dependency> 引入坐标</p>
+</li>
+<li>
+<p>定义坐标的 groupId，artifactId，version</p>
+</li>
+</ul>
+<h1 id="快速入门mybatis">快速入门mybatis
+</h1><h3 id="创建模块导入坐标">创建模块，导入坐标
+</h3><p>在创建好的模块中的 pom.xml 配置文件中添加依赖的坐标</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span><span class="lnt">42
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--mybatis 依赖--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>org.mybatis<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>mybatis<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>3.5.5<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--mysql 驱动--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>mysql<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>mysql-connector-java<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>5.1.46<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--junit 单元测试--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>junit<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>junit<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>4.13<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;scope&gt;</span>test<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 添加slf4j日志api --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>org.slf4j<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>slf4j-api<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>1.7.20<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 添加logback-classic依赖 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>ch.qos.logback<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>logback-classic<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>1.2.3<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 添加logback-core依赖 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>ch.qos.logback<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>logback-core<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>1.2.3<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencies&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>注意：需要在项目的 resources 目录下创建logback的配置文件</p>
+<h3 id="目录下创建mybatis的配置文件">目录下创建mybatis的配置文件
+</h3><ul>
+<li>
+<p>编写 MyBatis 核心配置文件 &ndash; &gt; 替换连接信息 解决硬编码问题</p>
+<p>在模块下的 resources 目录下创建mybatis的配置文件 <code>mybatis-config.xml</code>，内容如下</p>
+<ul>
+<li></li>
+</ul>
+</li>
+</ul>
+<pre><code>```xml
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot; ?&gt;
+&lt;!DOCTYPE configuration
+        PUBLIC &quot;-//mybatis.org//DTD Config 3.0//EN&quot;
+        &quot;http://mybatis.org/dtd/mybatis-3-config.dtd&quot;&gt;
+&lt;configuration&gt;
+
+    &lt;typeAliases&gt;
+        &lt;package name=&quot;com.itheima.pojo&quot;/&gt;
+    &lt;/typeAliases&gt;
+    
+    &lt;!--
+    environments：配置数据库连接环境信息。可以配置多个environment，通过default属性切换不同的environment
+    --&gt;
+    &lt;environments default=&quot;development&quot;&gt;
+        &lt;environment id=&quot;development&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;!--数据库连接信息--&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql:///mybatis?useSSL=false&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;1234&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+
+        &lt;environment id=&quot;test&quot;&gt;
+            &lt;transactionManager type=&quot;JDBC&quot;/&gt;
+            &lt;dataSource type=&quot;POOLED&quot;&gt;
+                &lt;!--数据库连接信息--&gt;
+                &lt;property name=&quot;driver&quot; value=&quot;com.mysql.jdbc.Driver&quot;/&gt;
+                &lt;property name=&quot;url&quot; value=&quot;jdbc:mysql:///mybatis?useSSL=false&quot;/&gt;
+                &lt;property name=&quot;username&quot; value=&quot;root&quot;/&gt;
+                &lt;property name=&quot;password&quot; value=&quot;1234&quot;/&gt;
+            &lt;/dataSource&gt;
+        &lt;/environment&gt;
+    &lt;/environments&gt;
+    &lt;mappers&gt;
+       &lt;!--加载sql映射文件--&gt;
+       &lt;mapper resource=&quot;UserMapper.xml&quot;/&gt;
+    &lt;/mappers&gt;
+&lt;/configuration&gt;
+```
+</code></pre>
+<ul>
+<li>
+<p>编写 SQL 映射文件 &ndash;&gt; 统一管理sql语句，解决硬编码问题</p>
+<p>在模块的 <code>resources</code> 目录下创建映射配置文件 <code>UserMapper.xml</code>，内容如下</p>
+</li>
+</ul>
+<h3 id="编写-sql-映射文件">编写 SQL 映射文件
+</h3><p>统一管理sql语句，解决硬编码问题</p>
+<p>在模块的 <code>resources</code> 目录下创建映射配置文件 <code>UserMapper.xml</code>，内容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="cp">&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE mapper PUBLIC &#34;-//mybatis.org//DTD Mapper 3.0//EN&#34; &#34;http://mybatis.org/dtd/mybatis-3-mapper.dtd&#34;&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&#34;test&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;selectAll&#34;</span> <span class="na">resultType=</span><span class="s">&#34;com.itheima.pojo.User&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        select * from tb_user;
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/select&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/mapper&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="编码">编码
+</h3><ul>
+<li></li>
+<li>
+<p>在 <code>com.itheima.pojo</code> 包下创建 User类</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">User</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">username</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">password</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">gender</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">private</span><span class="w"> </span><span class="n">String</span><span class="w"> </span><span class="n">addr</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="c1">//省略了 setter 和 getter</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>在 <code>com.itheima</code> 包下编写 MybatisDemo 测试类</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyBatisDemo</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//1. 加载mybatis的核心配置文件，获取 SqlSessionFactory</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;mybatis-config.xml&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">InputStream</span><span class="w"> </span><span class="n">inputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="na">getResourceAsStream</span><span class="p">(</span><span class="n">resource</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SqlSessionFactory</span><span class="w"> </span><span class="n">sqlSessionFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqlSessionFactoryBuilder</span><span class="p">().</span><span class="na">build</span><span class="p">(</span><span class="n">inputStream</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//2. 获取SqlSession对象，用它来执行sql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SqlSession</span><span class="w"> </span><span class="n">sqlSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqlSessionFactory</span><span class="p">.</span><span class="na">openSession</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//3. 执行sql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqlSession</span><span class="p">.</span><span class="na">selectList</span><span class="p">(</span><span class="s">&#34;test.selectAll&#34;</span><span class="p">);</span><span class="w"> </span><span class="c1">//参数是一个字符串，该字符串必须是映射配置文件的namespace.id</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">users</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//4. 释放资源</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">sqlSession</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p><strong>解决SQL映射文件的警告提示：</strong></p>
+<p>在入门案例映射配置文件中存在报红的情况。问题如下：</p>
+<ul>
+<li>产生的原因：Idea和数据库没有建立连接，不识别表信息。但是大家一定要记住，它并不影响程序的执行。</li>
+<li>解决方式：在Idea中配置MySQL数据库连接。</li>
+</ul>
+<p>IDEA中配置MySQL数据库连接</p>
+<ul>
+<li>
+<p>点击IDEA右边框的 <code>Database</code> ，在展开的界面点击 <code>+</code> 选择 <code>Data Source</code> ，再选择 <code>MySQL</code></p>
+</li>
+<li>
+<p>在弹出的界面进行基本信息的填写</p>
+</li>
+<li>
+<p>点击完成后就能看到如下界面</p>
+<p>而此界面就和 <code>navicat</code> 工具一样可以进行数据库的操作。也可以编写SQL语句</p>
+</li>
+</ul>
+<h2 id="mapper代理开发">Mapper代理开发
+</h2><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20221024183634.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>
+<p>在 <code>com.itheima.mapper</code> 包下创建 UserMapper接口，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="kd">public</span><span class="w"> </span><span class="kd">interface</span> <span class="nc">UserMapper</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">selectAll</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="n">User</span><span class="w"> </span><span class="nf">selectById</span><span class="p">(</span><span class="kt">int</span><span class="w"> </span><span class="n">id</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">　
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>在 <code>resources</code> 下创建 <code>com/itheima/mapper</code> 目录，并在该目录下创建 UserMapper.xml 映射配置文件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="c">&lt;!--
+</span></span></span><span class="line"><span class="cl"><span class="c">    namespace:名称空间。必须是对应接口的全限定名
+</span></span></span><span class="line"><span class="cl"><span class="c">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;mapper</span> <span class="na">namespace=</span><span class="s">&#34;com.itheima.mapper.UserMapper&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;select</span> <span class="na">id=</span><span class="s">&#34;selectAll&#34;</span> <span class="na">resultType=</span><span class="s">&#34;com.itheima.pojo.User&#34;</span><span class="nt">&gt;</span>
+</span></span><span class="line"><span class="cl">        select *
+</span></span><span class="line"><span class="cl">        from tb_user;
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/select&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/mapper&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>在 <code>com.itheima</code> 包下创建 MybatisDemo2 测试类，代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="cm">/**
+</span></span></span><span class="line"><span class="cl"><span class="cm"> * Mybatis 代理开发
+</span></span></span><span class="line"><span class="cl"><span class="cm"> */</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">MyBatisDemo2</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">public</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[]</span><span class="w"> </span><span class="n">args</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//1. 加载mybatis的核心配置文件，获取 SqlSessionFactory</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">String</span><span class="w"> </span><span class="n">resource</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">&#34;mybatis-config.xml&#34;</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">InputStream</span><span class="w"> </span><span class="n">inputStream</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">Resources</span><span class="p">.</span><span class="na">getResourceAsStream</span><span class="p">(</span><span class="n">resource</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SqlSessionFactory</span><span class="w"> </span><span class="n">sqlSessionFactory</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">SqlSessionFactoryBuilder</span><span class="p">().</span><span class="na">build</span><span class="p">(</span><span class="n">inputStream</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//2. 获取SqlSession对象，用它来执行sql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">SqlSession</span><span class="w"> </span><span class="n">sqlSession</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqlSessionFactory</span><span class="p">.</span><span class="na">openSession</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//3. 执行sql</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//3.1 获取UserMapper接口的代理对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">UserMapper</span><span class="w"> </span><span class="n">userMapper</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sqlSession</span><span class="p">.</span><span class="na">getMapper</span><span class="p">(</span><span class="n">UserMapper</span><span class="p">.</span><span class="na">class</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">List</span><span class="o">&lt;</span><span class="n">User</span><span class="o">&gt;</span><span class="w"> </span><span class="n">users</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">userMapper</span><span class="p">.</span><span class="na">selectAll</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">users</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//4. 释放资源</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">sqlSession</span><span class="p">.</span><span class="na">close</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<p>==注意：==</p>
+<p>如果Mapper接口名称和SQL映射文件名称相同，并在同一目录下，则可以使用包扫描的方式简化SQL映射文件的加载。也就是将核心配置文件的加载映射配置文件的配置修改为</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;mappers&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--加载sql映射文件--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- &lt;mapper resource=&#34;com/itheima/mapper/UserMapper.xml&#34;/&gt;--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--Mapper代理方式--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;package</span> <span class="na">name=</span><span class="s">&#34;com.itheima.mapper&#34;</span><span class="nt">/&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/mappers&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20230107223236.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<h2 id="tomcat">TOMCAT
+</h2><h2 id="tomcat-maven插件">Tomcat Maven插件
+</h2><p>在IDEA中使用本地Tomcat进行项目部署，相对来说步骤比较繁琐，所以我们需要一种更简便的方式来替换它，那就是直接使用Maven中的Tomcat插件来部署项目，具体的实现步骤，只需要两步，分别是:</p>
+<ol>
+<li>
+<p>在pom.xml中添加Tomcat插件</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="c">&lt;!--Tomcat插件 --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.apache.tomcat.maven<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>tomcat7-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>2.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>使用Maven Helper插件快速启动项目，选中项目，右键&ndash;&gt;Run Maven &ndash;&gt; tomcat7:run</p>
+</li>
+</ol>
+<p><img src="E:/JavaWeb-%25E8%25B5%2584%25E6%2596%2599/day08-HTTP&amp;Tomcat&amp;Servlet/ppt/assets/1627233963315.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1627233963315"
+	
+	
+></p>
+<p>==注意:==</p>
+<ul>
+<li>如果选中项目并右键点击后，看不到Run Maven和Debug Maven，这个时候就需要在IDEA中下载Maven Helper插件，具体的操作方式为: File &ndash;&gt; Settings &ndash;&gt; Plugins &ndash;&gt; Maven Helper &mdash;&gt; Install,安装完后按照提示重启IDEA，就可以看到了。</li>
+</ul>
+<p><img src="E:/JavaWeb-%25E8%25B5%2584%25E6%2596%2599/day08-HTTP&amp;Tomcat&amp;Servlet/ppt/assets/1627234184076.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1627234184076"
+	
+	
+></p>
+<ul>
+<li>Maven Tomcat插件目前只有Tomcat7版本，没有更高的版本可以使用</li>
+<li>使用Maven Tomcat插件，要想修改Tomcat的端口和访问路径，可以直接修改pom.xml</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">    	<span class="c">&lt;!--Tomcat插件 --&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.apache.tomcat.maven<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>tomcat7-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>2.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;configuration&gt;</span>
+</span></span><span class="line"><span class="cl">            	<span class="nt">&lt;port&gt;</span>80<span class="nt">&lt;/port&gt;</span><span class="c">&lt;!--访问端口号 --&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="c">&lt;!--项目访问路径
+</span></span></span><span class="line"><span class="cl"><span class="c">					未配置访问路径: http://localhost:80/tomcat-demo2/a.html
+</span></span></span><span class="line"><span class="cl"><span class="c">					配置/后访问路径: http://localhost:80/a.html
+</span></span></span><span class="line"><span class="cl"><span class="c">					如果配置成 /hello,访问路径会变成什么?
+</span></span></span><span class="line"><span class="cl"><span class="c">						答案: http://localhost:80/hello/a.html
+</span></span></span><span class="line"><span class="cl"><span class="c">				--&gt;</span>
+</span></span><span class="line"><span class="cl">                <span class="nt">&lt;path&gt;</span>/<span class="nt">&lt;/path&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;/configuration&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><strong>小结</strong></p>
+<p>通过这一节的学习，大家要掌握在IDEA中使用Tomcat的两种方式，集成本地Tomcat和使用Maven的Tomcat插件。后者更简单，推荐大家使用，但是如果对于Tomcat的版本有比较高的要求，要在Tomcat7以上，这个时候就只能用前者了。</p>
+<h1 id="jsp">jsp
+</h1><p>在 <code>dependencies</code> 标签中导入 JSP 的依赖，如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;groupId&gt;</span>javax.servlet.jsp<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;artifactId&gt;</span>jsp-api<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;version&gt;</span>2.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependency&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>该依赖的 <code>scope</code> 必须设置为 <code>provided</code>，因为 tomcat 中有这个jar包了，所以在打包时我们是不希望将该依赖打进到我们工程的war包中。</p>
+<p>JSP 脚本有如下三个分类：</p>
+<ul>
+<li>&lt;%&hellip;%&gt;：内容会直接放到_jspService()方法之中</li>
+<li>&lt;%=…%&gt;：内容会放到out.print()中，作为out.print()的参数</li>
+<li>&lt;%!…%&gt;：内容会放到_jspService()方法之外，被类直接包含</li>
+</ul>
+<h2 id="mvc模式喝三层架构">mvc模式喝三层架构
+</h2><p>MVC 是一种分层开发的模式，其中：</p>
+<ul>
+<li>
+<p>M：Model，业务模型，处理业务</p>
+</li>
+<li>
+<p>V：View，视图，界面展示</p>
+</li>
+<li>
+<p>C：Controller，控制器，处理请求，调用模型和视图</p>
+</li>
+</ul>
+<p>控制器（serlvlet）用来接收浏览器发送过来的请求，控制器调用模型（JavaBean）来获取数据，比如从数据库查询数据；控制器获取到数据后再交由视图（JSP）进行数据展示。</p>
+<p><strong>MVC 好处：</strong></p>
+<ul>
+<li>
+<p>职责单一，互不影响。每个角色做它自己的事，各司其职。</p>
+</li>
+<li>
+<p>有利于分工协作。</p>
+</li>
+<li>
+<p>有利于组件重用</p>
+</li>
+</ul>
+<p>三层架构是将我们的项目分成了三个层面，分别是 <code>表现层</code>、<code>业务逻辑层</code>、<code>数据访问层</code>。</p>
+<p>三层架构是将我们的项目分成了三个层面，分别是 <code>表现层</code>、<code>业务逻辑层</code>、<code>数据访问层</code>。</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20221025194517.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<ul>
+<li>数据访问层：对数据库的CRUD基本操作</li>
+<li>业务逻辑层：对业务逻辑进行封装，组合数据访问层层中基本功能，形成复杂的业务逻辑功能。例如 <code>注册业务功能</code> ，我们会先调用 <code>数据访问层</code> 的 <code>selectByName()</code> 方法判断该用户名是否存在，如果不存在再调用 <code>数据访问层</code> 的 <code>insert()</code> 方法进行数据的添加操作</li>
+<li>表现层：接收请求，封装数据，调用业务逻辑层，响应数据</li>
+</ul>
+<h1 id="cookie和session">Cookie和Session
+</h1><p>Cookie：客户端会话技术，将数据保存到客户端，以后每次请求都携带Cookie数据进行访问。</p>
+<h2 id="cookie的基本使用">Cookie的基本使用
+</h2><p>对于Cookie的使用，我们更关注的应该是后台代码如何操作Cookie，对于Cookie的操作主要分两大 类，本别是发送Cookie和获取Cookie,对于上面这两块内容，分别该如何实现呢?</p>
+<p>创建Cookie对象，并设置数据 发送Cookie到客户端：使用response对象 介绍完发送Cookie对应的步骤后，接下面通过一个案例来完成Coo</p>
+<p>3.1 发送Cookie</p>
+<ul>
+<li>创建Cookie对象，并设置数据</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Cookie cookie = new Cookie(&#34;key&#34;,&#34;value&#34;);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>发送Cookie到客户端：使用==response==对象</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">response.addCookie(cookie);
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>介绍完发送Cookie对应的步骤后，接下面通过一个案例来完成Cookie的发送，具体实现步骤为:</p>
+<blockquote>
+<p>需求:在Servlet中生成Cookie对象并存入数据，然后将数据发送给浏览器</p>
+<p>1.创建Maven项目,项目名称为cookie-demo，并在pom.xml添加依赖</p>
+<p>2.编写Servlet类，名称为AServlet</p>
+<p>3.在AServlet中创建Cookie对象，存入数据，发送给前端</p>
+<p>4.启动测试，在浏览器查看Cookie对象中的值</p>
+</blockquote>
+<p>(1)创建Maven项目cookie-demo，并在pom.xml添加依赖</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span><span class="lnt">39
+</span><span class="lnt">40
+</span><span class="lnt">41
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-xml" data-lang="xml"><span class="line"><span class="cl"><span class="nt">&lt;properties&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;maven.compiler.source&gt;</span>8<span class="nt">&lt;/maven.compiler.source&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;maven.compiler.target&gt;</span>8<span class="nt">&lt;/maven.compiler.target&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/properties&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;dependencies&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--servlet--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>javax.servlet<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>javax.servlet-api<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>3.1.0<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--jsp--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>javax.servlet.jsp<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>jsp-api<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>2.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;scope&gt;</span>provided<span class="nt">&lt;/scope&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!--jstl--&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>jstl<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>jstl<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>1.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;dependency&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;groupId&gt;</span>taglibs<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;artifactId&gt;</span>standard<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;version&gt;</span>1.1.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/dependency&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/dependencies&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;build&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;plugins&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;plugin&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;groupId&gt;</span>org.apache.tomcat.maven<span class="nt">&lt;/groupId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;artifactId&gt;</span>tomcat7-maven-plugin<span class="nt">&lt;/artifactId&gt;</span>
+</span></span><span class="line"><span class="cl">            <span class="nt">&lt;version&gt;</span>2.2<span class="nt">&lt;/version&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="nt">&lt;/plugin&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nt">&lt;/plugins&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nt">&lt;/build&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>(2)编写Servlet类，名称为AServlet</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/aServlet&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPost</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doGet</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>(3)在Servlet中创建Cookie对象，存入数据，发送给前端</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/aServlet&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">AServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//发送Cookie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//1. 创建Cookie对象</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cookie</span><span class="w"> </span><span class="n">cookie</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="n">Cookie</span><span class="p">(</span><span class="s">&#34;username&#34;</span><span class="p">,</span><span class="s">&#34;zs&#34;</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//2. 发送Cookie，response</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">response</span><span class="p">.</span><span class="na">addCookie</span><span class="p">(</span><span class="n">cookie</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPost</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doGet</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>（4）启动测试，在浏览器查看Cookie对象中的值</p>
+<p>访问<code>http://localhost:8080/cookie-demo/aServlet</code></p>
+<p>chrome浏览器查看Cookie的值，有两种方式,分布式:</p>
+<p>3.2 获取Cookie</p>
+<ul>
+<li>获取客户端携带的所有Cookie，使用==request==对象</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">Cookie[] cookies = request.getCookies();
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>遍历数组，获取每一个Cookie对象：for</li>
+<li>使用Cookie对象方法获取数据</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">cookie.getName();
+</span></span><span class="line"><span class="cl">cookie.getValue();
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>介绍完获取Cookie对应的步骤后，接下面再通过一个案例来完成Cookie的获取，具体实现步骤为:</p>
+<blockquote>
+<p>需求:在Servlet中获取前一个案例存入在Cookie对象中的数据</p>
+<p>1.编写一个新Servlet类，名称为BServlet</p>
+<p>2.在BServlet中使用request对象获取Cookie数组，遍历数组，从数据中获取指定名称对应的值</p>
+<p>3.启动测试，在控制台打印出获取的值</p>
+</blockquote>
+<p>(1)编写一个新Servlet类，名称为BServlet</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/bServlet&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPost</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doGet</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>（2）在BServlet中使用request对象获取Cookie数组，遍历数组，从数据中获取指定名称对应的值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-java" data-lang="java"><span class="line"><span class="cl"><span class="nd">@WebServlet</span><span class="p">(</span><span class="s">&#34;/bServlet&#34;</span><span class="p">)</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="kd">public</span><span class="w"> </span><span class="kd">class</span> <span class="nc">BServlet</span><span class="w"> </span><span class="kd">extends</span><span class="w"> </span><span class="n">HttpServlet</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doGet</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//获取Cookie</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//1. 获取Cookie数组</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="n">Cookie</span><span class="o">[]</span><span class="w"> </span><span class="n">cookies</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">request</span><span class="p">.</span><span class="na">getCookies</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="c1">//2. 遍历数组</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="n">Cookie</span><span class="w"> </span><span class="n">cookie</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="n">cookies</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="c1">//3. 获取数据</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="n">String</span><span class="w"> </span><span class="n">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cookie</span><span class="p">.</span><span class="na">getName</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="k">if</span><span class="p">(</span><span class="s">&#34;username&#34;</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">name</span><span class="p">)){</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">String</span><span class="w"> </span><span class="n">value</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">cookie</span><span class="p">.</span><span class="na">getValue</span><span class="p">();</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="o">+</span><span class="s">&#34;:&#34;</span><span class="o">+</span><span class="n">value</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">                </span><span class="k">break</span><span class="p">;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">            </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nd">@Override</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="kd">protected</span><span class="w"> </span><span class="kt">void</span><span class="w"> </span><span class="nf">doPost</span><span class="p">(</span><span class="n">HttpServletRequest</span><span class="w"> </span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">HttpServletResponse</span><span class="w"> </span><span class="n">response</span><span class="p">)</span><span class="w"> </span><span class="kd">throws</span><span class="w"> </span><span class="n">ServletException</span><span class="p">,</span><span class="w"> </span><span class="n">IOException</span><span class="w"> </span><span class="p">{</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">        </span><span class="k">this</span><span class="p">.</span><span class="na">doGet</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="w"> </span><span class="n">response</span><span class="p">);</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="p">}</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="p">}</span><span class="w">
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>（3）启动测试，在控制台打印出获取的值</p>
+<p>访问<code>http://localhost:8080/cookie-demo/bServlet</code></p>
+<p><img src="E:/JavaWeb-%25E8%25B5%2584%25E6%2596%2599/day11-%25E4%25BC%259A%25E8%25AF%259D%25E6%258A%2580%25E6%259C%25AF/ppt/assets/1629391020081.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1629391020081"
+	
+	
+></p>
+<p>在IDEA控制台就能看到输出的结果:</p>
+<p><img src="E:/JavaWeb-%25E8%25B5%2584%25E6%2596%2599/day11-%25E4%25BC%259A%25E8%25AF%259D%25E6%258A%2580%25E6%259C%25AF/ppt/assets/1629391061140.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="1629391061140"
+	
+	
+></p>
+<p>==思考:==测试的时候</p>
+<ul>
+<li>在访问AServlet和BServlet的中间把关闭浏览器,重启浏览器后访问BServlet能否获取到Cookie中的数据?</li>
+</ul>
+<p>这个问题，我们会在Cookie的使用细节中讲，大家可以动手先试下。</p>
+<p><strong>小结</strong></p>
+<p>在这节中，我们主要讲解了Cookie的基本使用,包含两部分内容</p>
+<ul>
+<li>
+<p>发送Cookie:</p>
+<ul>
+<li>创建Cookie对象，并设置值:Cookie cookie = new Cookie(&ldquo;key&rdquo;,&ldquo;value&rdquo;);</li>
+<li>发送Cookie到客户端使用的是Reponse对象:response.addCookie(cookie);</li>
+</ul>
+</li>
+<li>
+<p>获取Cookie:</p>
+<ul>
+<li>使用Request对象获取Cookie数组:Cookie[] cookies = request.getCookies();</li>
+<li>遍历数组</li>
+<li>获取数组中每个Cookie对象的值:cookie.getName()和cookie.getValue()</li>
+</ul>
+<h2 id="session的基本使用">Session的基本使用
+</h2></li>
+</ul>
+<p>介绍完Cookie的基本使用之后，那么Cookie的底层到底是如何实现一次会话两次请求之间的数据共享呢?</p>
+<p>==Session==：服务端会话跟踪技术：将数据保存到服务端。</p>
+<ul>
+<li>Session是存储在服务端而Cookie是存储在客户端</li>
+<li>存储在客户端的数据容易被窃取和截获，存在很多不安全的因素</li>
+<li>存储在服务端的数据相比于客户端来说就更安全</li>
+</ul>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%90%8E%E7%AB%AF/">后端</a>
+        
+            <a href="/tags/javaweb/">Javaweb</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="">
+    <a href="/post/1364342007/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">云服务器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/136435067/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">数据库与java</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/9dafd965/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">linux学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/16977/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220729003418.png" loading="lazy" data-key="16977" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220729003418.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySql基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/46395/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">算法基础笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: '',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+  <div class="footer-container">
+
+    
+    <div class="footer-line">
+      © 
+      
+        2021 – 2025
+      
+      <span class="site-name">Example Person</span>
+    </div>
+
+    
+    
+    
+    
+    
+
+    <div class="footer-line stats">
+      发布了 33 篇文章 · 共 11.0 万字
+    </div>
+
+    
+    <div class="footer-line powered">
+      
+    </div>
+      
+使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建||       
+主题 <b><a href="https://github.com/kagurasoul/hugo-theme-stack-kagura" target="_blank" rel="noopener" data-version="3.32.0">Stack-kagura</a></b> 由 <a href="https://github.com/kagurasoul" target="_blank" rel="noopener">kagurasoul</a> 修改
+
+  </div>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.684e1f482c506a2d9482ab16c2c5b44a0159091a06e5058c62b7178e79d320d5.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

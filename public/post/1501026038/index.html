@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content=" 1.hexo的一些指令\r本地预览\nhexo s\n">
+<title>博客的搭建记录.</title>
+
+<link rel='canonical' href='http://localhost:1313/post/1501026038/'>
+
+<link rel="stylesheet" href="/scss/style.min.2ead26fa5df18ee63e8b93c4633f8c6957743eb13c8ba990934545fa8186c5ac.css"><meta property='og:title' content="博客的搭建记录.">
+<meta property='og:description' content=" 1.hexo的一些指令\r本地预览\nhexo s\n">
+<meta property='og:url' content='http://localhost:1313/post/1501026038/'>
+<meta property='og:site_name' content='神楽之魂的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='hexo' /><meta property='article:published_time' content='2021-11-22T14:35:49&#43;00:00'/><meta property='article:modified_time' content='2021-11-22T14:35:49&#43;00:00'/><meta property='og:image' content='https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051135132.png' />
+<meta name="twitter:title" content="博客的搭建记录.">
+<meta name="twitter:description" content=" 1.hexo的一些指令\r本地预览\nhexo s\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051135132.png' />
+    <link rel="shortcut icon" href="/img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_7c008adc2b535ffc.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">神楽之魂的博客</a></h1>
+            <h2 class="site-description">C&#39;est la vie</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Kaguranotamashii'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/ja/" >日本語</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1hexo的一些指令">1.hexo的一些指令</a></li>
+    <li><a href="#2typora和hd的使用方法">2.Typora和Hd的使用方法</a>
+      <ol>
+        <li><a href="#1段落"><strong>1.段落</strong></a></li>
+        <li><a href="#2格式"><strong>2.格式</strong></a></li>
+        <li><a href="#3部分常用的">3.部分常用的</a></li>
+      </ol>
+    </li>
+    <li><a href="#3yilia的美化和修改已经换蝴蝶主题">3.yilia的美化和修改（已经换蝴蝶主题）</a>
+      <ol>
+        <li><a href="#标签">标签</a></li>
+        <li><a href="#截断点">截断点</a></li>
+        <li><a href="#图标">图标</a></li>
+        <li><a href="#文章点击量">文章点击量</a></li>
+        <li><a href="#插入图片">插入图片</a></li>
+        <li><a href="#总文章数">总文章数</a></li>
+        <li><a href="#不蒜子">不蒜子</a></li>
+      </ol>
+    </li>
+    <li><a href="#4蝴蝶主题">4蝴蝶主题</a></li>
+    <li><a href="#5蝴蝶主题的美化">5蝴蝶主题的美化</a>
+      <ol>
+        <li><a href="#2022617">2022/6/17</a></li>
+        <li><a href="#7月7日更新">7月7日更新</a></li>
+        <li><a href="#7月11日更新">7月11日更新</a></li>
+        <li><a href="#717">7/17</a></li>
+        <li><a href="#86">8.6</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/1501026038/">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051135132.png" loading="lazy" alt="Featured image of post 博客的搭建记录." />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E5%BD%92%E6%A1%A3/" style="background-color: #2a9d8f; color: #fff;">
+                归档
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/1501026038/">博客的搭建记录.</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2021-11-22T14:35:49Z'>Nov 22, 2021</time>
+            </div>
+        
+
+        
+
+
+
+
+
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 5 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <!-- more -->
+<h1 id="1hexo的一些指令">1.hexo的一些指令
+</h1><p><strong>本地预览</strong></p>
+<p>hexo s</p>
+<p><strong>配置文件和主题</strong></p>
+<p>hexo g
+**清空 hexo g **</p>
+<p><strong>生成的内容</strong>
+hexo clean</p>
+<p><strong>标题名称</strong><br>
+hexo new post 标题名称</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">categories: 
+</span></span><span class="line"><span class="cl">-
+</span></span><span class="line"><span class="cl">cover: 图标
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="2typora和hd的使用方法">2.Typora和Hd的使用方法
+</h1><p><a class="link" href="https://blog.csdn.net/qq_45479404/article/details/115891144"  target="_blank" rel="noopener"
+    >typora的快捷键</a></p>
+<h2 id="1段落"><strong>1.段落</strong>
+</h2><ul>
+<li>标题：Ctrl+1/2/3/4/5</li>
+<li>段落：Ctrl+0</li>
+<li>增大标题级别：Ctrl+=</li>
+<li>减少标题级别：Ctrl+-</li>
+<li>表格：Ctrl+T</li>
+<li>代码块：Ctrl+Shift+K</li>
+<li>公式块：Ctrl+Shift+M</li>
+<li>引用：Ctrl+Shift+Q</li>
+<li>有序列表：Ctrl+Shift+[</li>
+<li>无序列表：Ctrl+Shift+]</li>
+<li>增加缩进：Ctrl+]</li>
+<li>减少缩进：Ctrl+[</li>
+</ul>
+<h2 id="2格式"><strong>2.格式</strong>
+</h2><ul>
+<li>加粗：Ctrl+B</li>
+<li>斜体：Ctrl+I</li>
+<li>下划线：Ctrl+U</li>
+<li>代码：Ctrl+Shift+`</li>
+<li>删除线：Alt+Shift+5</li>
+<li>超链接：Ctrl+K</li>
+<li>图像：Ctrl+Shift+I</li>
+<li>清除样式：Ctrl+</li>
+</ul>
+<h2 id="3部分常用的">3.部分常用的
+</h2><p>标题：Ctrl+1、2、3…对应一、二、三…级标题（光标定位到需要设置为标题的行，按快捷键）
+<strong>加粗</strong>：Ctrl+B（选中要加粗的文本，按快捷键）
+<em>斜体</em>：Ctrl+I（选中要设置斜体的文本，按快捷键）
+下划线：Ctrl+U（选中要加下划线的文本，按快捷键）
+删除线：Alt+Shift+5（选中要加删除线的文本，按快捷键）
+<code>代码片段</code>：Ctrl+Shift+`（选中要设置为代码片段的文本，按快捷键）
+代码块：Ctrl+Shift+K（任意位置按快捷键，选择编程语言然后在代码块中输入代码）
+切换到下一行：Ctrl+Enter（任意位置按快捷键，在代码块中可以跳出代码块另起一行）
+<a class="link" href="https://link.zhihu.com/?target=https://www.baidu.com/"  target="_blank" rel="noopener"
+    >链接</a>：Ctrl+K（先复制链接，然后选中要加链接的文本，按快捷键。Ctrl+左键点击文本可跳转到对应链接）
+取消格式：再次按相同的快捷键即可
+有序列表：数字+点+空格
+任务列表：加号或减号+空格
+切换到列表下一行：Space+Enter
+嵌套列表：按Tab键
+退出列表：按 Shift+Tab
+插入表格：Ctrl+T
+引用：输入&gt;后面加空格，或者Ctrl+Shift+Q</p>
+<h1 id="3yilia的美化和修改已经换蝴蝶主题">3.yilia的美化和修改（已经换蝴蝶主题）
+</h1><h2 id="标签">标签
+</h2><hr>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">tags:
+</span></span><span class="line"><span class="cl">    - 小工具
+</span></span><span class="line"><span class="cl">    - hexo
+</span></span><span class="line"><span class="cl">    - yilia
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">或者tags: [xx,xxxx]
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="截断点">截断点
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl"># 在博客md文件中，设置截断位置
+</span></span><span class="line"><span class="cl">&lt;!--more--&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="图标">图标
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">`theme/yilia/source`目录下添加`favicon.ico`图片
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="文章点击量">文章点击量
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">themes</span><span class="o">/</span><span class="nx">yilia</span><span class="o">/</span><span class="nx">layout</span><span class="o">/</span><span class="nx">_partial</span><span class="o">/</span><span class="nx">article</span><span class="p">.</span><span class="nx">ejs中</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;%-</span> <span class="nx">partial</span><span class="p">(</span><span class="s1">&#39;post/title&#39;</span><span class="p">,</span> <span class="p">{</span><span class="nx">class_name</span><span class="o">:</span> <span class="s1">&#39;article-title&#39;</span><span class="p">})</span> <span class="o">%&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="nx">后面加入</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span><span class="nx">显示阅读次数</span><span class="o">--&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;%</span> <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">index</span> <span class="o">&amp;&amp;</span> <span class="nx">post</span><span class="p">.</span><span class="nx">comments</span><span class="p">){</span> <span class="o">%&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">br</span><span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">a</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;cloud-tie-join-count&#34;</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;javascript:void(0);&#34;</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&#34;color:gray;font-size:14px;&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">span</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;icon-sort&#34;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;busuanzi_container_page_pv&#34;</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&#34;color:#ef7522;font-size:14px;&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">阅读数</span><span class="o">:</span> <span class="o">&lt;</span><span class="nx">span</span> <span class="nx">id</span><span class="o">=</span><span class="s2">&#34;busuanzi_value_page_pv&#34;</span><span class="o">&gt;&lt;</span><span class="err">/span&gt;次 &amp;nbsp;&amp;nbsp;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/span&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="o">&lt;</span><span class="err">/a&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;%</span> <span class="p">}</span> <span class="o">%&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="c">&lt;!--</span><span class="nx">显示阅读次数完毕</span><span class="o">--&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="插入图片">插入图片
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm install hexo-asset-image –save
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>打开blog的_cofig.yml修改</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">post_asset_folder: true
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>新建文章的时候自动生成文章名字.filenname，将图片放入</p>
+<h2 id="总文章数">总文章数
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-js" data-lang="js"><span class="line"><span class="cl"><span class="nx">将</span><span class="o">*</span><span class="nx">themes</span><span class="err">\</span><span class="nx">yilia</span><span class="err">\</span><span class="nx">layout_partial</span><span class="o">*</span><span class="nx">left</span><span class="o">-</span><span class="nx">col</span><span class="p">.</span><span class="nx">ejs文件的</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="nx">nav</span> <span class="kr">class</span><span class="o">=</span><span class="s2">&#34;header-menu&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="nx">ul</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;%</span> <span class="k">for</span> <span class="p">(</span><span class="kd">var</span> <span class="nx">i</span> <span class="k">in</span> <span class="nx">theme</span><span class="p">.</span><span class="nx">menu</span><span class="p">){</span> <span class="o">%&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="nx">li</span><span class="o">&gt;&lt;</span><span class="nx">a</span> <span class="nx">href</span><span class="o">=</span><span class="s2">&#34;&lt;%- url_for(theme.menu[i]) %&gt;&#34;</span><span class="o">&gt;&lt;%=</span> <span class="nx">i</span> <span class="o">%&gt;&lt;</span><span class="err">/a&gt;&lt;/li&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;%</span><span class="p">}</span><span class="o">%&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="err">/ul&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="err">/nav&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="不蒜子">不蒜子
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">在 themes\yilia\layout_partial\after-footer.ejs最后添加
+</span></span><span class="line"><span class="cl">&lt;script async src=&#34;//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js&#34;&gt;&lt;/script&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">修改 themes\yilia\layout\_partial\footer.ejs，包括访客数和站点访问总量
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># PV方式，单个用户连续点击 n 篇，记录 n 次记录值
+</span></span><span class="line"><span class="cl">&lt;span id=&#34;busuanzi_container_site_pv&#34;&gt;    本站总访问量&lt;span id=&#34;busuanzi_value_site_pv&#34;&gt;&lt;/span&gt;次&lt;/span&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"># UV方式，单个用户连续点击 n 篇，记录 1 次记录值
+</span></span><span class="line"><span class="cl">&lt;span id=&#34;busuanzi_container_site_uv&#34;&gt;  本站访客数&lt;span id=&#34;busuanzi_value_site_uv&#34;&gt;&lt;/span&gt;人次&lt;/span&gt;
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">单篇
+</span></span><span class="line"><span class="cl"># 使用 pv 记录方式，每访问一次，记录一次
+</span></span><span class="line"><span class="cl">&lt;span id=&#34;busuanzi_container_page_pv&#34;&gt;  本文总阅读量&lt;span id=&#34;busuanzi_value_page_pv&#34;&gt;&lt;/span&gt;次&lt;/span&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="4蝴蝶主题">4蝴蝶主题
+</h1><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="n">npm</span> <span class="n">install</span> <span class="n">hexo</span><span class="o">-</span><span class="n">generator</span><span class="o">-</span><span class="n">index</span><span class="o">-</span><span class="n">pin</span><span class="o">-</span><span class="n">top</span> <span class="o">--</span><span class="n">save安装置顶</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="n">md文件内部的配置</span>
+</span></span><span class="line"><span class="cl"><span class="nl">top</span><span class="p">:</span> <span class="mi">1000</span>
+</span></span><span class="line"><span class="cl"><span class="c1">//数字越大置顶在前面
+</span></span></span><span class="line"><span class="cl"><span class="c1">//这个也是z
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="nl">sticky</span><span class="p">:</span>
+</span></span><span class="line"><span class="cl"><span class="nl">comments</span><span class="p">:</span> <span class="nb">true</span>    <span class="err">添加上这个，如果这篇文章不需要评论改为</span><span class="nb">false</span><span class="err">，默认开启</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="link" href="https://akilar.top/posts/615e2dec/"  target="_blank" rel="noopener"
+    >Butterfly主题美化日记 | Akilarの糖果屋</a></p>
+<p><a class="link" href="https://tzy1997.com/articles/hexo541u/#%e5%9b%be%e5%ba%93"  target="_blank" rel="noopener"
+    >Hexo+Butterfly主题美化 | 唐先森の博客 (tzy1997.com)</a></p>
+<p><a class="link" href="https://www.antmoe.com/posts/a811d614/"  target="_blank" rel="noopener"
+    >Hexo 博客之 butterfly 主题优雅魔改系列 | 小康博客 (antmoe.com)</a></p>
+<p><a class="link" href="https://hassanwong.top/posts/277da8ad/#%e8%af%97%e8%af%8d%e6%a0%87%e7%ad%be-Poem"  target="_blank" rel="noopener"
+    >Butterfly主题外挂标签（个人常用） | Hassan&rsquo;s Blog (hassanwong.top)</a></p>
+<p><a class="link" href="https://fontawesome.com/search?s=solid%2Cbrands"  target="_blank" rel="noopener"
+    >Search | Font Awesome</a> 图标网站11</p>
+<h1 id="5蝴蝶主题的美化">5蝴蝶主题的美化
+</h1><h2 id="2022617">2022/6/17
+</h2><p><strong>隐藏文章</strong></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">npm install hexo-generator-indexed
+</span></span><span class="line"><span class="cl">---
+</span></span><span class="line"><span class="cl">title: example
+</span></span><span class="line"><span class="cl">hide: true
+</span></span><span class="line"><span class="cl">---
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="7月7日更新">7月7日更新
+</h2><p><strong>更新背景的流星雨</strong></p>
+<p><a class="link" href="https://blog.justlovesmile.top/posts/6a260bf6.html?time=1657095696195"  target="_blank" rel="noopener"
+    >Hexo博客 | 如何让你的博客拥有星空背景和流星特效 | Justlovesmile&rsquo;s BLOG</a></p>
+<p>修改非夜间模式启用将js写成两份</p>
+<p>一份文件关键词dark， 一份都是light</p>
+<p>目前来看我的个人博客美化的已经差不多了吧</p>
+<h2 id="7月11日更新">7月11日更新
+</h2><p><strong>夜间模式切换动画</strong></p>
+<p>实现白天夜晚切换动画</p>
+<h2 id="717">7/17
+</h2><p>修改了右键小部件，写了点好玩的小彩蛋hhhh</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220717011226.png"
+	
+	
+	
+	loading="lazy"
+	
+	
+></p>
+<p>在原有作者的前提下修改了 菜单切换夜间模式效果 夜间模式颜色
+首页文章卡片修改</p>
+<h2 id="86">8.6
+</h2><p>D:\kagura blog\kagura_blog\themes\butterfly\source\css_layout\sidebar.styl</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">    right: -($sidebar-width)-5px
+</span></span><span class="line"><span class="cl">    //这边我不知道弄什么操作了 -5px
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a class="link" href="https://guole.fun/posts/butterfly-custom/#bber%e8%af%b4%e8%af%b4%e9%a6%96%e9%a1%b5%e8%bd%ae%e6%92%ad"  target="_blank" rel="noopener"
+    >我的Blog美化日记——Hexo+Butterfly | Guo Le&rsquo;s Blog</a></p>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/hexo/">Hexo</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/post/19af2057/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20221129234643.png" loading="lazy" data-key="19af2057" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20221129234643.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">关于自制galgame的日记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/58072/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">git出现的问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/54547/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">日常分享</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/13590/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051134404.png" loading="lazy" data-key="13590" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051134404.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">美化博客出现的问题</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: '',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+  <div class="footer-container">
+
+    
+    <div class="footer-line">
+      © 
+      
+        2021 – 2025
+      
+      <span class="site-name">Example Person</span>
+    </div>
+
+    
+    
+    
+    
+    
+
+    <div class="footer-line stats">
+      发布了 33 篇文章 · 共 11.0 万字
+    </div>
+
+    
+    <div class="footer-line powered">
+      
+    </div>
+      
+使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建||       
+主题 <b><a href="https://github.com/kagurasoul/hugo-theme-stack-kagura" target="_blank" rel="noopener" data-version="3.32.0">Stack-kagura</a></b> 由 <a href="https://github.com/kagurasoul" target="_blank" rel="noopener">kagurasoul</a> 修改
+
+  </div>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.684e1f482c506a2d9482ab16c2c5b44a0159091a06e5058c62b7178e79d320d5.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>

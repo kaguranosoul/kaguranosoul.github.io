@@ -60,8 +60,8 @@ services:
     disqus:
         shortname: "hugo-theme-stack"
     # Google Analytics 跟踪 ID
-    googleAnalytics:
-        id:                            # 填写你的 GA 跟踪 ID
+    # googleAnalytics:
+    #     id:                            # 填写你的 GA 跟踪 ID
 
 # ----------------------------------------------------------------------------------
 # 分页和永久链接 (pagination & permalinks)
@@ -123,7 +123,7 @@ params:
             shortname:
         # ... [省略其他评论服务配置，如 utterances, beaudar, remark42, vssue, waline, twikoo, cactus, giscus, gitalk, cusdis]
         twikoo:
-            envId:  
+            envId: ""
             region:
             path:
             lang:

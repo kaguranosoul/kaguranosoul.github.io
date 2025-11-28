@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+    <channel>
+        <title>これは神楽の魂のブログ</title>
+        <link>http://localhost:1313/ja/</link>
+        <description>Recent content on これは神楽の魂のブログ</description>
+        <generator>Hugo -- gohugo.io</generator>
+        <language>ja</language>
+        <copyright>Example Person</copyright>
+        <lastBuildDate>Tue, 28 May 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/ja/index.xml" rel="self" type="application/rss+xml" /><item>
+        <title>Archives</title>
+        <link>http://localhost:1313/ja/archives/</link>
+        <pubDate>Tue, 28 May 2019 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/ja/archives/</guid>
+        <description></description>
+        </item>
+        <item>
+        <title>关于</title>
+        <link>http://localhost:1313/ja/%E5%85%B3%E4%BA%8E/</link>
+        <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+        
+        <guid>http://localhost:1313/ja/%E5%85%B3%E4%BA%8E/</guid>
+        <description>&lt;h1 id=&#34;-神乐之魂的博客技术与思想的交汇点&#34;&gt;💻 神乐之魂的博客：技术与思想的交汇点
+&lt;/h1&gt;&lt;p&gt;大家好，我是 &lt;strong&gt;神乐之魂&lt;/strong&gt;，一名来自北京某高校的 2021 级学生。
+在这个充满无限可能的数字世界里，我搭建了我的个人博客，作为分享技术探索、记录学习心得以及表达个人思想的窗口。它不仅是我技术积累的展示区，也是我与世界进行深度交流的桥梁。
+欢迎大家访问我的博客，并留下您的宝贵意见和建议！&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-博客技术栈与平台变动回顾&#34;&gt;🛠️ 博客技术栈与平台变动回顾
+&lt;/h2&gt;&lt;p&gt;我的博客经历了几次重要的平台迁移，这些变化反映了我对效率、控制权和写作初心的追求。&lt;/p&gt;
+&lt;h2 id=&#34;-技术栈概览一位全栈探索者的旅程&#34;&gt;🛠️ 技术栈概览：一位全栈探索者的旅程
+&lt;/h2&gt;&lt;p&gt;我是一名追求技术广度和深度的&lt;strong&gt;全栈开发者&lt;/strong&gt;，致力于在不同领域进行探索和实践。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;后端开发（主要兴趣）：&lt;/strong&gt;
+我对后端架构设计和开发充满热情。我精通 &lt;strong&gt;Java&lt;/strong&gt;，同时也是 &lt;strong&gt;Go&lt;/strong&gt; 语言的积极使用者。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;前端开发（全栈实践）：&lt;/strong&gt;
+我在前端领域也有深入实践，能够使用 &lt;strong&gt;Vue&lt;/strong&gt;、&lt;strong&gt;Next.js&lt;/strong&gt; 等主流框架和技术栈构建现代化用户界面。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;p&gt;你想让我将这段更新后的内容替换到你博客介绍的相应位置吗？&lt;/p&gt;
+&lt;h3 id=&#34;平台迁移之旅&#34;&gt;平台迁移之旅
+&lt;/h3&gt;&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;时间段&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;平台选择&lt;/th&gt;
+          &lt;th style=&#34;text-align: left&#34;&gt;变动原因/描述&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;2021 - 2023 年&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Hexo&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;最初的静态博客选择，完成了初期的技术积累。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;2024 年&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Halo&lt;/strong&gt; (动态博客)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;追求更动态、易于管理和操作的平台，体验动态博客的便捷性。&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;20 25 年 9 月至今&lt;/strong&gt;&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;Hugo&lt;/strong&gt; (静态博客)&lt;/td&gt;
+          &lt;td style=&#34;text-align: left&#34;&gt;&lt;strong&gt;重归初心&lt;/strong&gt;。服务器到期后，我决定回归静态部署，寻求更高的效率与纯粹的写作体验。&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;拥抱-hugo追求极致效率&#34;&gt;拥抱 Hugo：追求极致效率
+&lt;/h3&gt;&lt;p&gt;放弃 Halo 动态博客，重回静态博客，是出于对效率的极致追求和对&lt;strong&gt;控制权&lt;/strong&gt;的渴望。虽然我非常喜欢 Halo 的便捷性，但将所有内容托管于一个平台总让我感觉缺少了些什么。&lt;/p&gt;
+&lt;p&gt;这一次，我选择了 &lt;strong&gt;Hugo&lt;/strong&gt; 而非 Hexo。引用中学老师的话：“你浪费了一分钟，就等于浪费了全班人的半小时。” Hexo 漫长的生成时间（十几秒）让我深感效率低下，而 &lt;strong&gt;Hugo 仅需秒级&lt;/strong&gt;的速度，完美匹配了我的需求。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-回归初心专注于思想的表达&#34;&gt;💡 回归初心：专注于思想的表达
+&lt;/h2&gt;&lt;p&gt;这次平台迁移的更深层原因，是希望让博客&lt;strong&gt;回归写作的本质&lt;/strong&gt;。&lt;/p&gt;
+&lt;p&gt;技术博客固然重要，但一个人的思想和经验才是真正独一无二、能引起共鸣的。我渴望通过博客，分享我在技术道路上的所学所感，更重要的是，表达我对于技术和人生的思考。让内容本身，而非花哨的样式，成为博客的焦点。&lt;/p&gt;
+&lt;h3 id=&#34;新博客配置&#34;&gt;新博客配置
+&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;生成器：&lt;/strong&gt; &lt;strong&gt;Hugo&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;主题：&lt;/strong&gt; Stack (基于该主题进行了定制修改)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;部署：&lt;/strong&gt; &lt;strong&gt;GitHub Pages&lt;/strong&gt; 与 &lt;strong&gt;Vercel&lt;/strong&gt; 部署&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;-期待交流&#34;&gt;🤝 期待交流
+&lt;/h2&gt;&lt;p&gt;我将持续更新我的博客，分享我的探索和感悟，希望能对你们有所帮助。&lt;/p&gt;
+&lt;p&gt;感谢你们的访问，期待与你们在思想与技术的交汇点上进行每一次真诚的交流！&lt;/p&gt;
+&lt;hr&gt;
+</description>
+        </item>
+        
+    </channel>
+</rss>

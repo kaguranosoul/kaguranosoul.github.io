@@ -1,0 +1,2237 @@
+<!DOCTYPE html>
+<html lang="zh-cn" dir="ltr">
+    <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content="前端三剑客的弟弟\n">
+<title>Html基础</title>
+
+<link rel='canonical' href='http://localhost:1313/post/48593/'>
+
+<link rel="stylesheet" href="/scss/style.min.2ead26fa5df18ee63e8b93c4633f8c6957743eb13c8ba990934545fa8186c5ac.css"><meta property='og:title' content="Html基础">
+<meta property='og:description' content="前端三剑客的弟弟\n">
+<meta property='og:url' content='http://localhost:1313/post/48593/'>
+<meta property='og:site_name' content='神楽之魂的博客'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:tag' content='前端' /><meta property='article:tag' content='学习' /><meta property='article:published_time' content='2021-11-23T23:49:10&#43;00:00'/><meta property='article:modified_time' content='2021-11-23T23:49:10&#43;00:00'/><meta property='og:image' content='https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112111537490.png' />
+<meta name="twitter:title" content="Html基础">
+<meta name="twitter:description" content="前端三剑客的弟弟\n"><meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content='https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112111537490.png' />
+    <link rel="shortcut icon" href="/img/avatar.png" />
+
+    </head>
+    <body class="
+    article-page
+    ">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.documentElement.dataset.scheme = 'dark';
+        } else {
+            document.documentElement.dataset.scheme = 'light';
+        }
+    })();
+</script>
+<div class="container main-container flex on-phone--column extended"><aside class="sidebar left-sidebar sticky ">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header>
+        
+            
+            <figure class="site-avatar">
+                <a href="/">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu_7c008adc2b535ffc.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+                </a>
+                
+                    <span class="emoji">🍥</span>
+                
+            </figure>
+            
+        
+        
+        <div class="site-meta">
+            <h1 class="site-name"><a href="/">神楽之魂的博客</a></h1>
+            <h2 class="site-description">C&#39;est la vie</h2>
+        </div>
+    </header><ol class="menu-social">
+            
+                <li>
+                    <a 
+                        href='https://github.com/Kaguranotamashii'
+                        target="_blank"
+                        title="GitHub"
+                        rel="me"
+                    >
+                        
+                        
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-github" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5" />
+</svg>
+
+
+
+                        
+                    </a>
+                </li>
+            
+        </ol><ol class="menu" id="main-menu">
+        
+        
+        
+        <li >
+            <a href='/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>主页</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/%E5%85%B3%E4%BA%8E/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>关于</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/archives/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/search/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="10" cy="10" r="7" />
+  <line x1="21" y1="21" x2="15" y2="15" />
+</svg>
+
+
+
+                
+                <span>Search</span>
+            </a>
+        </li>
+        
+        
+        <li >
+            <a href='/links/' >
+                
+                
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Links</span>
+            </a>
+        </li>
+        
+        <li class="menu-bottom-section">
+            <ol class="menu">
+                    
+                        <li id="i18n-switch">  
+                            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-language" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+  <path d="M4 5h7" />
+  <path d="M9 3v2c0 4.418 -2.239 8 -5 8" />
+  <path d="M5 9c-.003 2.144 2.952 3.908 6.7 4" />
+  <path d="M12 20l4 -9l4 9" />
+  <path d="M19.1 18h-6.2" />
+</svg>
+
+
+
+                            <select name="language" title="language" onchange="window.location.href = this.selectedOptions[0].value">
+                                
+                                    <option value="http://localhost:1313/" selected>简体中文</option>
+                                
+                                    <option value="http://localhost:1313/en/" >English</option>
+                                
+                                    <option value="http://localhost:1313/ja/" >日本語</option>
+                                
+                            </select>
+                        </li>
+                    
+                
+
+                
+                    <li id="dark-mode-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                        <span>暗色模式</span>
+                    </li>
+                
+            </ol>
+        </li>
+    </ol>
+</aside>
+
+    <aside class="sidebar right-sidebar sticky">
+        
+            
+                
+    <section class="widget archives">
+        <div class="widget-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-hash" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <line x1="5" y1="9" x2="19" y2="9" />
+  <line x1="5" y1="15" x2="19" y2="15" />
+  <line x1="11" y1="4" x2="7" y2="20" />
+  <line x1="17" y1="4" x2="13" y2="20" />
+</svg>
+
+
+
+        </div>
+        <h2 class="widget-title section-title">目录</h2>
+        
+        <div class="widget--toc">
+            <nav id="TableOfContents">
+  <ol>
+    <li><a href="#1html入门">1.HTML入门</a></li>
+    <li><a href="#2hmtl的语法">2.HMTL的语法</a>
+      <ol>
+        <li><a href="#1html标签的语法格式请忽略">1.html标签的语法格式(请忽略.)</a></li>
+        <li><a href="#2标签关系html标签">2.标签关系HTML标签</a>
+          <ol>
+            <li><a href="#包含关系">包含关系</a></li>
+            <li><a href="#并列关系兄弟关系">并列关系(兄弟关系)</a></li>
+            <li><a href="#基本标签">基本标签</a></li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#3html属性">3.HTML属性</a>
+      <ol>
+        <li><a href="#1属性">1.属性</a>
+          <ol>
+            <li><a href="#1专用属性">1.<strong>专用属性</strong></a></li>
+            <li><a href="#2通用属性"><strong>2.通用属性</strong></a>
+              <ol>
+                <li></li>
+              </ol>
+            </li>
+          </ol>
+        </li>
+      </ol>
+    </li>
+    <li><a href="#4html标题">4.HTML标题</a>
+      <ol>
+        <li><a href="#1h1到h6head">1.&lt;.h1&gt;到&lt;.h6&gt;（head)</a></li>
+      </ol>
+    </li>
+    <li><a href="#5html段落标签p">5.HTML段落标签&lt;.p&gt;</a>
+      <ol>
+        <li><a href="#1p的用法">1.&lt;.p&gt;的用法</a></li>
+        <li><a href="#2段落中的空白符">2.段落中的空白符</a></li>
+      </ol>
+    </li>
+    <li><a href="#6html文本格式化">6.HTML文本格式化</a>
+      <ol>
+        <li><a href="#几个相似的格式化文本">几个相似的格式化文本</a>
+          <ol>
+            <li><a href="#1strong和b">1.strong和b</a></li>
+          </ol>
+        </li>
+        <li><a href="#2em和i">2.em和i</a></li>
+      </ol>
+    </li>
+    <li><a href="#7div和span标签">7div和span标签</a></li>
+    <li><a href="#8特殊的字符">8.特殊的字符</a></li>
+    <li><a href="#7html超链接a">7.HTML超链接&lt;.a&gt;</a>
+      <ol>
+        <li><a href="#1用法">1.用法</a></li>
+        <li><a href="#2href的属性">2href的属性</a></li>
+        <li><a href="#3target的属性">3.target的属性</a></li>
+        <li><a href="#4href的本地网页跳转">4.href的本地网页跳转</a></li>
+      </ol>
+    </li>
+    <li><a href="#8html插入图片img">8HTML插入图片&lt;.img&gt;</a>
+      <ol>
+        <li><a href="#1用法-1">1.用法</a></li>
+        <li><a href="#2设置图片的宽高度">2.设置图片的宽高度</a>
+          <ol>
+            <li><a href="#mark"><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051305958.png" alt="mark"></a></li>
+          </ol>
+        </li>
+        <li><a href="#3图片映射">3图片映射</a></li>
+      </ol>
+    </li>
+    <li><a href="#9htmltable表格">9HTML&lt;.table&gt;表格</a>
+      <ol>
+        <li><a href="#1表格使用代码">1.表格使用代码</a></li>
+        <li><a href="#2表格的边框合并">2.表格的边框合并</a></li>
+        <li><a href="#3表格的标题caption">3.表格的标题&lt;.caption&gt;</a></li>
+        <li><a href="#4合并">4.合并</a></li>
+        <li><a href="#5表格的属性">5.表格的属性</a></li>
+      </ol>
+    </li>
+    <li><a href="#10html列表标签">10.HTML列表标签</a>
+      <ol>
+        <li><a href="#1有序列表">1.有序列表</a></li>
+        <li><a href="#2无序列表">2.无序列表</a></li>
+        <li><a href="#3自定义列表">3.自定义列表</a></li>
+        <li><a href="#4列表的默认样态">4.列表的默认样态</a></li>
+      </ol>
+    </li>
+    <li><a href="#11form标签">11.⛤⛤⛤&lt;.form&gt;标签</a>
+      <ol>
+        <li><a href="#1文字域">1文字域</a></li>
+        <li><a href="#2密码字段">2密码字段</a></li>
+        <li><a href="#3按钮">3.按钮</a></li>
+        <li><a href="#4复选框checkboxes">4.复选框checkboxes</a></li>
+        <li><a href="#5提交按钮">5提交按钮</a></li>
+        <li><a href="#6简单的下拉列表">6.简单的下拉列表</a></li>
+        <li><a href="#7重置reset">7重置reset</a></li>
+        <li><a href="#8定义点击按钮">8定义点击按钮</a></li>
+        <li><a href="#9上传文件">9上传文件</a></li>
+        <li><a href="#10label标签">10.label标签</a></li>
+        <li><a href="#11表单元素">11.表单元素</a></li>
+      </ol>
+    </li>
+    <li><a href="#13html综合学习">13.html综合学习</a>
+      <ol>
+        <li><a href="#1注册界面">1注册界面</a></li>
+        <li><a href="#1注册界面-1">1注册界面</a></li>
+      </ol>
+    </li>
+  </ol>
+</nav>
+        </div>
+    </section>
+
+            
+        
+    </aside>
+
+
+            <main class="main full-width">
+    <article class="has-image main-article">
+    <header class="article-header">
+        <div class="article-image">
+            <a href="/post/48593/">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112111537490.png" loading="lazy" alt="Featured image of post Html基础" />
+                
+            </a>
+        </div>
+    
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/" style="background-color: #2a9d8f; color: #fff;">
+                技术笔记
+            </a>
+        
+    </header>
+    
+
+    <div class="article-title-wrapper">
+        <h2 class="article-title">
+            <a href="/post/48593/">Html基础</a>
+        </h2>
+    
+        
+    </div>
+
+    
+    
+    
+    
+    <footer class="article-time">
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-calendar-time" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" />
+  <circle cx="18" cy="18" r="4" />
+  <path d="M15 3v4" />
+  <path d="M7 3v4" />
+  <path d="M3 11h16" />
+  <path d="M18 16.496v1.504l1 1" />
+</svg>
+                <time class="article-time--published" datetime='2021-11-23T23:49:10Z'>Nov 23, 2021</time>
+            </div>
+        
+
+        
+
+
+
+
+
+
+        
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                <time class="article-time--reading">
+                    阅读时长: 2 分钟
+                </time>
+            </div>
+        
+    </footer>
+    
+
+    
+</div>
+
+</header>
+
+    <section class="article-content">
+    
+    
+    <p>前端三剑客的弟弟</p>
+<p>[TOC]</p>
+<h1 id="1html入门">1.HTML入门
+</h1><p>​         html是创建网页的标准标记语言。网页有很多的格式,html,jsp,asp等 ，html并不是编程语言，因为编程语言具有逻辑能力，html超越了传统的txt文本，具有超文本性，是一种标记语言。</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="o">&lt;!</span><span class="n">DOCTYPE</span> <span class="n">html</span><span class="o">&gt;</span><span class="c1">//这是文档的声明，声明文档为html
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="n">html</span> <span class="n">lang</span><span class="o">=</span><span class="s">&#34;zh-CN&#34;</span><span class="o">&gt;</span><span class="c1">//en  zh-CN
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="o">&lt;</span><span class="n">head</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">meta</span> <span class="n">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">title</span><span class="o">&gt;</span><span class="err">这是网页标题</span><span class="o">&lt;/</span><span class="n">title</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">head</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;</span><span class="n">body</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">这是一段文本</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">a</span> <span class="n">href</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/&#34;</span><span class="o">&gt;</span><span class="err">这个一个超链接</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">ul</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">HTML教程</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">CSS教程</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="o">&lt;</span><span class="n">li</span><span class="o">&gt;</span><span class="n">JavaScript教程</span><span class="o">&lt;/</span><span class="n">li</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;/</span><span class="n">ul</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="o">&lt;</span><span class="n">input</span> <span class="n">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="n">placeholder</span><span class="o">=</span><span class="s">&#34;请输入内容&#34;</span> <span class="o">/&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">这是一个标题</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span><span class="c1">//h1-h6
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">这是一个段落</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="err">这是另一个段落</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">body</span><span class="o">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="o">&lt;/</span><span class="n">html</span><span class="o">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上这个就是最基本的网页格式，每个html标签(Tag)都有不同的含义</p>
+<ul>
+<li>
+<p>&lt;.html&gt;当作所有的html代码，可以把它当作外壳</p>
+</li>
+<li>
+<p>&lt;.head&gt; 标签表示网页的头部，用来设置一些网页的参数</p>
+</li>
+<li>
+<p>&lt;.meta charset=&ldquo;UTF-8&rdquo;&gt; 指明当前网页编码格式 UTF-8；</p>
+</li>
+<li>
+<p>&lt;.title&gt; 网页的标题，它会显示在浏览器的标题栏。
+&lt;./head&gt;</p>
+</li>
+<li>
+<p>&lt;.body&gt;表示正文</p>
+<p>&lt;.p&gt;表示段落，能容纳一段文字</p>
+<p>&lt;.a&gt;用来表示一个超链接
+&lt;.ul&gt;表示一个列表，里面的<li>是子标签</p>
+</li>
+</ul>
+<p>HTML语言中最推荐vscode写</p>
+<!DOCTYPE><!--html标记-->
+<html>      <!--html总标记-->
+    <head><!--头信息标签-->
+        <meta charset="utf-8"><!--utf-8编码-->
+        <title>html小白入门</title><!--页面标题-->
+    <head>
+    <body><!--网页显示标签，body标签内的信息都会在页面中显示-->
+        <h1>这是文本标题，下面是一张图片</h1><!--文本标题标签-->
+        <imgsrc="tupian.jpg"><br><!--图片标签，br是换行标签-->
+        <input type="text" value="这是输入框，请输入内容！"><br><!--输入框标签-->
+        <button type="submit" >按钮</button><!--按钮标签-->
+    </body>d
+</html>
+​        
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;!DOCTYPE&gt;&lt;!--html标记--&gt;
+</span></span><span class="line"><span class="cl">&lt;html&gt;      &lt;!--html总标记--&gt;
+</span></span><span class="line"><span class="cl">    &lt;head&gt;&lt;!--头信息标签--&gt;
+</span></span><span class="line"><span class="cl">        &lt;meta charset=&#34;utf-8&#34;&gt;&lt;!--utf-8编码--&gt;
+</span></span><span class="line"><span class="cl">        &lt;title&gt;html小白入门&lt;/title&gt;&lt;!--页面标题--&gt;
+</span></span><span class="line"><span class="cl">    &lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;body&gt;&lt;!--网页显示标签，body标签内的信息都会在页面中显示--&gt;
+</span></span><span class="line"><span class="cl">        &lt;h1&gt;这是文本标题，下面是一张图片&lt;/h1&gt;&lt;!--文本标题标签--&gt;
+</span></span><span class="line"><span class="cl">        &lt;h2 href=&#34;baidu.com&#34;&gt;点我百度搜索&lt;/a&gt;&lt;!--超链接--&gt;
+</span></span><span class="line"><span class="cl">        &lt;imgsrc=&#34;tupian.jpg&#34;&gt;&lt;br&gt;&lt;!--图片标签，br是换行标签--&gt;
+</span></span><span class="line"><span class="cl">        &lt;input type=&#34;text&#34; value=&#34;这是输入框，请输入内容！&#34;&gt;&lt;br&gt;&lt;!--输入框标签--&gt;
+</span></span><span class="line"><span class="cl">        &lt;button type=&#34;submit&#34; &gt;按钮&lt;/button&gt;&lt;!--按钮标签--&gt;
+</span></span><span class="line"><span class="cl">    &lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>这个就是最基本的使用方法</p>
+<h1 id="2hmtl的语法">2.HMTL的语法
+</h1><h2 id="1html标签的语法格式请忽略">1.html标签的语法格式(请忽略.)
+</h2><p>&lt;.div class=&ldquo;foo&rdquo;&gt;我是内容&lt;/div.&gt;<br>
+foo<strong>为属性</strong>  前后div为<strong>开始结束标签</strong>  开始标签可以写除了class的比如id title等</p>
+<p>html标签是成对出现的，称之为双标签<br>
+有些特殊的比如说&lt;br/.&gt;</p>
+<p>div为内容划分元素 是出现最高的</p>
+<h2 id="2标签关系html标签">2.标签关系HTML标签
+</h2><h3 id="包含关系">包含关系
+</h3><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>神楽の魂<span class="p">&lt;</span><span class="nt">font</span> <span class="na">size</span><span class="o">=</span><span class="s">&#34;4&#34;</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;#666&#34;</span><span class="p">&gt;</span>自我介绍<span class="p">&lt;/</span><span class="nt">font</span><span class="p">&gt;&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        这是北京普通的双非<span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>大学生<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span>的个人博客，目前 <span class="p">&lt;</span><span class="nt">font</span> <span class="na">color</span><span class="o">=</span><span class="s">&#34;red&#34;</span><span class="p">&gt;</span>18岁<span class="p">&lt;</span><span class="nt">sup</span><span class="p">&gt;</span>①<span class="p">&lt;/</span><span class="nt">sup</span><span class="p">&gt;&lt;/</span><span class="nt">font</span><span class="p">&gt;</span>，<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;https://kaguranotamashii.github.io/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>猛击这里<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>查看我的博客<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>C语言<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>、<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>python<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>、<span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>html<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>css<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">hr</span> <span class="p">/&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">small</span><span class="p">&gt;</span>03年出生<span class="p">&lt;/</span><span class="nt">small</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!包含关系&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>对代码的说明</p>
+<ul>
+<li>&lt;.font&gt;  size改变大小 clor改变颜色</li>
+<li>&lt;.b&gt;加粗</li>
+<li>&lt;.sup&gt;上方的小标</li>
+<li>&lt;.i&gt;斜</li>
+<li>&lt;.hr&gt;分割线，它是自闭和标签</li>
+<li>&lt;.a&gt;为打开超链接 其中&lt;.target&gt;为打开方式 ——blank表示在新标签打开</li>
+</ul>
+<h3 id="并列关系兄弟关系">并列关系(兄弟关系)
+</h3><p>&lt;.head&gt;&lt;/.head&gt;</p>
+<h3 id="基本标签">基本标签
+</h3><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>&lt;html.&gt;</th>
+          <th style="text-align: center">html标签</th>
+          <th>根标签</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&lt;head.&gt;</td>
+          <td style="text-align: center">头部</td>
+          <td>在head中我们必须要设计的标签是title</td>
+      </tr>
+      <tr>
+          <td>&lt;title.&gt;</td>
+          <td style="text-align: center">标题</td>
+          <td>属于自己的网页标题</td>
+      </tr>
+      <tr>
+          <td>&lt;body.&gt;</td>
+          <td style="text-align: center">主体</td>
+          <td>元素包含的所有内容，页面内容基本都是放在body中的</td>
+      </tr>
+  </tbody>
+</table></div>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/1201214410649.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<h1 id="3html属性">3.HTML属性
+</h1><h2 id="1属性">1.属性
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">attr=&#34;value&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>attr为属性名字 value表示属性值</p>
+<h3 id="1专用属性">1.<strong>专用属性</strong>
+</h3><p>有些属性适合大部分 叫通用属性<br>
+有些只适合小部分 叫专用属性<br>
+比如说img中src和alt就是专用属性  a中href和target也是专用属性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;img src=&#34;xxxx.png&#34; alt=&#34;xxxxx&#34; width=&#34;100&#34; height=&#34;50&#34;&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="2通用属性"><strong>2.通用属性</strong>
+</h3><p>如id,title,class,style</p>
+<h5 id="1id">1.id
+</h5><p>id属性是用来赋值给某个标签名字，当使用css或者js时候，可以通过id来找到这个标签。</p>
+<p>id可以快速找到定位，id可以方便区分，id具有唯一性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;input type=&#34;text&#34; id=&#34;name&#34; /&gt;
+</span></span><span class="line"><span class="cl">&lt;div id=&#34;content&#34;&gt;我的博客&lt;/div&gt;
+</span></span><span class="line"><span class="cl">&lt;p id=&#34;url&#34;&gt;kaguranotamashii.github.io/&lt;/p&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="2class">2.class
+</h5><p>class与id不同在于，class可以定义多个相同值</p>
+<p>class=&quot;  &quot;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;div class=&#34;className1 className2 className3&#34;&gt;&lt;/div&gt;
+</span></span><span class="line"><span class="cl">&lt;p class=&#34;content&#34;&gt;神楽の魂的博客&lt;/p&gt;
+</span></span><span class="line"><span class="cl">&lt;div class=&#34;content&#34;&gt;kaguranotamashii.github.io&lt;/div&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h5 id="3title">3.title
+</h5><p>title属性是用来标签内容的描述说明</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>演示文档<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/html/&#34;</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;HTML教程&#34;</span><span class="p">&gt;</span>HTML教程<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051303396.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<h5 id="4style">4.style
+</h5><p>style属性我们可以在html标签内部定义css样态，比如颜色，字体等等</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>演示文档<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;color:red;&#34;</span><span class="p">&gt;</span>kaguranotamashii,github.io<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;./logo.png&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;height:50px;&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;C语言中文网LOGO&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;padding:10px;border:2px solid #999;text-align:center;&#34;</span><span class="p">&gt;</span>C语言中文网<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="cp">&lt;!这里做个批注padding表示内边距，内容区与边框之间的区域
+</span></span></span><span class="line"><span class="cl"><span class="cp">    border表示设置元素的边框--&gt;</span>
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="4html标题">4.HTML标题
+</h1><h2 id="1h1到h6head">1.&lt;.h1&gt;到&lt;.h6&gt;（head)
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML标题标签演示<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>h1 标题<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>h2 标题<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h3</span><span class="p">&gt;</span>h3 标题<span class="p">&lt;/</span><span class="nt">h3</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h4</span><span class="p">&gt;</span>h4 标题<span class="p">&lt;/</span><span class="nt">h4</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span>h5 标题<span class="p">&lt;/</span><span class="nt">h5</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">h6</span><span class="p">&gt;</span>h6 标题<span class="p">&lt;/</span><span class="nt">h6</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051304374.png" alt="mark" style="zoom:33%;" />
+<p>标题标签的使用只能用于定义标签，不能加粗</p>
+<h1 id="5html段落标签p">5.HTML段落标签&lt;.p&gt;
+</h1><p>paragraph</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&#34;UTF-8&#34;</span>
+</span></span><span class="line"><span class="cl"> <span class="err">&lt;</span><span class="na">title</span><span class="p">&gt;</span>测试<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>这是神楽の魂的博客网站为<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;kaguranotamashii.github.io&#34;</span><span class="p">&gt;</span>点我<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>我的博客会写一些技术向的内容<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">  <span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="1p的用法">1.&lt;.p&gt;的用法
+</h2><p>段落标签由开始标签<code>&lt;p&gt;</code>和结束标签<code>&lt;/p&gt;</code>组成，开始和结束标签之间的内容会被视为一个段落。段落标签是一个非常基本的标签，我们在网页上发布文章时就会用到</p>
+<h2 id="2段落中的空白符">2.段落中的空白符
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;!DOCTYPE html&gt;
+</span></span><span class="line"><span class="cl">&lt;html lang=&#34;en&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;head&gt;
+</span></span><span class="line"><span class="cl">    &lt;meta charset=&#34;UTF-8&#34;&gt;
+</span></span><span class="line"><span class="cl">    &lt;title&gt;HTML段落中的空白符&lt;/title&gt;
+</span></span><span class="line"><span class="cl">&lt;/head&gt;
+</span></span><span class="line"><span class="cl">&lt;body&gt;
+</span></span><span class="line"><span class="cl">    &lt;p&gt;神    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    楽の魂
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    
+</span></span><span class="line"><span class="cl">    的   博        客&lt;/p&gt;
+</span></span><span class="line"><span class="cl">&lt;/body&gt;
+</span></span><span class="line"><span class="cl">&lt;/html&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051304921.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<p>如果想要在段落中换行，需要使用专门的换行标签<code>&lt;br /&gt;</code>，<code>&lt;br /&gt;</code>标签属于自闭和标签，因此不需要对应的结束标签`&lt; /br&gt;</p>
+<ul>
+<li>文本在一个段落中会根据浏览器窗口大小自动换行</li>
+<li>段落与段落有空隙</li>
+</ul>
+<p>&lt;br/.&gt;</p>
+<h1 id="6html文本格式化">6.HTML文本格式化
+</h1><p>突出重要性 比普通文字更重要</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>标签</th>
+          <th style="text-align: center">描述</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>&lt; b&gt;&hellip;</b></td>
+          <td style="text-align: center">加粗标签中的字体</td>
+      </tr>
+      <tr>
+          <td><strong>&lt; em&gt;&hellip;</em></strong></td>
+          <td style="text-align: center">强调标签中的内容，并使标签中的字体倾斜</td>
+      </tr>
+      <tr>
+          <td>&lt; i&gt;&hellip;</i></td>
+          <td style="text-align: center">定义标签中的字体为斜体</td>
+      </tr>
+      <tr>
+          <td>&lt; small&gt;&hellip;</small></td>
+          <td style="text-align: center">定义标签中的字体为小号字体</td>
+      </tr>
+      <tr>
+          <td><strong>&lt; strong&gt;&hellip;</strong></strong></td>
+          <td style="text-align: center">强调标签中的内容，并将字体加粗（推荐）</td>
+      </tr>
+      <tr>
+          <td>&lt; sub&gt;&hellip;</sub></td>
+          <td style="text-align: center">定义下标文本</td>
+      </tr>
+      <tr>
+          <td>&lt; sup&gt;&hellip;</sup></td>
+          <td style="text-align: center">定义上标文本</td>
+      </tr>
+      <tr>
+          <td><strong>&lt; ins&gt;&hellip;</ins></strong></td>
+          <td style="text-align: center">下划线</td>
+      </tr>
+      <tr>
+          <td><strong>&lt; del&gt;&hellip;</del></strong></td>
+          <td style="text-align: center">在文本内容上添加删除线</td>
+      </tr>
+      <tr>
+          <td>&lt; code&gt;&hellip;</code></td>
+          <td style="text-align: center">定义一段代码</td>
+      </tr>
+      <tr>
+          <td>&lt; kbd&gt;&hellip;</kbd></td>
+          <td style="text-align: center">用来表示文本是通过键盘输入的(不建议使用)</td>
+      </tr>
+      <tr>
+          <td>&lt; samp&gt;&hellip;</samp></td>
+          <td style="text-align: center">定义程序的样本</td>
+      </tr>
+      <tr>
+          <td>&lt; var&gt;&hellip;</var></td>
+          <td style="text-align: center">定义变量</td>
+      </tr>
+      <tr>
+          <td>&lt; pre&gt;&hellip;</pre></td>
+          <td style="text-align: center">定义预格式化的文本，被该标签包裹的文本会保留所有的空格和换行符，字体也会呈现为等宽字体</td>
+      </tr>
+      <tr>
+          <td>&lt; abbr&gt;&hellip;</abbr></td>
+          <td style="text-align: center">用来表示标签中的内容为缩写形式</td>
+      </tr>
+      <tr>
+          <td>&lt; address&gt;&hellip;</address></td>
+          <td style="text-align: center">用来定义文档作者的联系信息，被该标签包裹的文本通常会以斜体呈现，并在文本前面换行</td>
+      </tr>
+      <tr>
+          <td>&lt; bdo&gt;&hellip;</bdo></td>
+          <td style="text-align: center">定义标签中的文字方向</td>
+      </tr>
+      <tr>
+          <td>&lt; blockquote&gt;&hellip;</blockquote></td>
+          <td style="text-align: center">定义一段引用的文本，例如名人名言，文本会换行输出，并在左右两边进行缩进</td>
+      </tr>
+      <tr>
+          <td>&lt; q&gt;&hellip;</q></td>
+          <td style="text-align: center">定义一段短的引用，浏览器会将引用的内容使用双引号包裹起来</td>
+      </tr>
+      <tr>
+          <td>&lt; cite&gt;&hellip;</cite></td>
+          <td style="text-align: center">表示对某个文献的引用，例如书籍或杂志的名称，文本会以斜体显示</td>
+      </tr>
+      <tr>
+          <td>&lt; dfn&gt;&hellip;</dfn></td>
+          <td style="text-align: center">用来定义一个术语，标签中的文本会以斜体呈现</td>
+      </tr>
+  </tbody>
+</table></div>
+<h2 id="几个相似的格式化文本">几个相似的格式化文本
+</h2><h3 id="1strong和b">1.strong和b
+</h3><p>前者表示加重语气,后者只是单纯的加粗,在无障碍模式中strong会比b的声音更特殊.</p>
+<h2 id="2em和i">2.em和i
+</h2><p>em也是加重处理,i仅仅是单纯的斜体</p>
+<h1 id="7div和span标签">7div和span标签
+</h1><p>两者没有语义，他们就是一个盒子，用来放内容</p>
+<p>div division表示分割 分区<br>
+span表示跨度 跨距</p>
+<p>div用来布局 但是一行只能有一个div 大盒子<br>
+span相反 一行可以放多个span 小盒子</p>
+<h1 id="8特殊的字符">8.特殊的字符
+</h1><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051305236.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="ni">&amp;nbsp;</span>空格
+</span></span><span class="line"><span class="cl"><span class="ni">&amp;lt;</span>小于
+</span></span><span class="line"><span class="cl"><span class="ni">&amp;gt;</span>大于
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="7html超链接a">7.HTML超链接&lt;.a&gt;
+</h1><h2 id="1用法">1.用法
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;url&#34;</span>  <span class="na">target</span><span class="o">=</span><span class="s">&#34;opentype&#34;</span><span class="p">&gt;</span>链接文本<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2href的属性">2href的属性
+</h2><p>anchor 瞄</p>
+<p>href 属性指定链接的目标，也就是要跳转到什么位置。href 可以有多种形式，例如：</p>
+<ul>
+<li>href 可以指向一个网页（.html、.php、.jsp、.asp 等格式），这也是最常见的形式，例如 href=&ldquo;<a class="link" href="http://c.biancheng.net/view/1719.html%22"  target="_blank" rel="noopener"
+    >http://c.biancheng.net/view/1719.html"</a>；</li>
+<li>href 可以指向图片（.jpg、.gif、.png 等格式）、音频（.mp3、.wav等格式）、视频（.mp4、.mkv格式）等媒体文件，例如 href=&quot;/uploads/allimg/181221/134I32557-0.jpg&rdquo;；</li>
+<li>href 可以指向压缩文件（.zip、.rar 等格式）、可执行程序（.exe）等，一些下载网站的链接就可以写成这种形式，例如 href=&quot;./../uploads/data_package/ComputerFoundation.zip&quot;；</li>
+<li>href 甚至还可以指向本机的文件，只是很少这样使用，例如 href=&ldquo;D:/Program Files/360/360safe/360Safe.exe&rdquo;。</li>
+</ul>
+<p>你看，href 本质上就是指向一个文件，这个文件几乎可以是任意格式的。如果浏览器支持这种格式，那么它就可以在浏览器上显示，比如常见的图片、音频、视频等，如果浏览器不支持这种格式，那么就提示用户下载。</p>
+<h2 id="3target的属性">3.target的属性
+</h2><div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>属性值</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>_self</td>
+          <td><strong>默认</strong>，在现有窗口中打开新页面，原窗口将被覆盖。</td>
+      </tr>
+      <tr>
+          <td>_blank</td>
+          <td>在新窗口中打开新页面，原窗口将被保留。</td>
+      </tr>
+      <tr>
+          <td>_parent</td>
+          <td>在当前框架的上一层打开新页面。</td>
+      </tr>
+      <tr>
+          <td>_top</td>
+          <td>在顶层框架中打开新页面。</td>
+      </tr>
+  </tbody>
+</table></div>
+<p>如果不设置默认为_self</p>
+<h2 id="4href的本地网页跳转">4.href的本地网页跳转
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;#sakura&#34;</span><span class="p">&gt;</span>点我跳转<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>忽略我<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>忽略我<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>忽略我<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>忽略我<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>忽略我<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;sakura&#34;</span><span class="p">&gt;</span>我是sakura<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><a href="#sakura">点我跳转</a></p>
+<p>忽略我</p>
+<p>忽略我</p>
+<p>忽略我</p>
+<p>忽略我</p>
+<p>忽略我</p>
+<p id="sakura">我是sakura</p>
+<h1 id="8html插入图片img">8HTML插入图片&lt;.img&gt;
+</h1><h2 id="1用法-1">1.用法
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;url alt=&#34;</span><span class="na">text</span><span class="err">&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>src(source)为必选<strong>属性</strong>,用来指明图片的地址和目录,支持多种图片类型</li>
+<li>alt为可选属性,如果遇到图片加载不了,会显示alt的信息</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 使用绝对路径插入网络图片 --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/cpp/templets/new/images/logo.jpg?v=3.994&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;C语言中文网Logo&#34;</span><span class="p">&gt;</span> <span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="c">&lt;!-- 在当前 HTML 文档的上层目录中有一个 images 文件夹，该文件夹下有一张图片 html5.png --&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;../images/html5.png&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;HTML5 Logo&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051305957.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="HTML插入图片示例"
+	
+	
+></p>
+<h2 id="2设置图片的宽高度">2.设置图片的宽高度
+</h2><p>​             比如这张图片渚薰被吃</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051305711.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://r34tujk76.hb-bkt.clouddn.com/blog/20211126/195024889.jpg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;渚薰被吃了&#34;</span><span class="na">title</span><span class="o">=</span><span class="s">&#34;渚薰被吃&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 200px; height: 100px;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://r34tujk76.hb-bkt.clouddn.com/blog/20211126/195024889.jpg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;渚薰被吃了&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 200px; height: 150px;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://r34tujk76.hb-bkt.clouddn.com/blog/20211126/195024889.jpg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;渚薰被吃了&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 100px; height: 200px;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://r34tujk76.hb-bkt.clouddn.com/blog/20211126/195024889.jpg&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;渚薰被吃了&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;width: 150px; height: 200px;&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h3 id="mark"><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051305958.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+>
+</h3><h2 id="3图片映射">3图片映射
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="cp">&lt;!DOCTYPE html&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&#34;en&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>HTML图片映射<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;logo.png&#34;</span> <span class="na">usemap</span><span class="o">=</span><span class="s">&#34;#objects&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;C语言中文网Logo&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">map</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;objects&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">area</span> <span class="na">shape</span><span class="o">=</span><span class="s">&#34;rect&#34;</span> <span class="na">coords</span><span class="o">=</span><span class="s">&#34;0,0,82,126&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/html/&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;HTML教程&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">area</span> <span class="na">shape</span><span class="o">=</span><span class="s">&#34;circle&#34;</span> <span class="na">coords</span><span class="o">=</span><span class="s">&#34;90,58,3&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://www.biancheng.net/css3/&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;CSS教程&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">area</span> <span class="na">shape</span><span class="o">=</span><span class="s">&#34;circle&#34;</span> <span class="na">coords</span><span class="o">=</span><span class="s">&#34;124,58,8&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://www.biancheng.net/js/&#34;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&#34;JavaScript教程&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">map</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>&lt;.map&gt;标签的name属性对应的是&lt;.img&gt;标签的usemap属性,&lt;.area&gt;用于定义点击图片的坐标shape 和 coords 属性</p>
+<p>在 &lt;.area&gt; 标签中可以通过 shape 属性来定义可点击区域的形状，并通过 coords 属性来定义形状所对应的坐标。其中 shape 属性的可选值有三个，分别是 rect（矩形）、circle（圆形）和 poly（多边形），coords 属性中坐标的值则取决于可点击区域的形状。</p>
+<p>假如定义一个矩形的可点击区域，示例代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;area shape=&#34;rect&#34; coords=&#34;x1, y1, x2, y2&#34; href=&#34;http://c.biancheng.net/&#34; alt=&#34;&#34;&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中 x1、y1 代表矩形的左上角坐标，x2、y2 代表矩形的右下角坐标。</p>
+<p>假如定义一个圆形的可点击区域，示例代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;area shape=&#34;circle&#34; coords=&#34;x, y, radius&#34; href=&#34;&#34; alt=&#34;&#34;&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中 x、y 代表圆心的坐标，而 radius 则是圆的半径。</p>
+<p>假如定义一个多边形的可点击区域，示例代码如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;area shape=&#34;poly&#34; coords=&#34;x1, y1, x2, y2, x3, y3, ..., xn, yn&#34; href=&#34;http://c.biancheng.net/&#34; alt=&#34;&#34;&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>其中每对 x 和 y 的值都代表一个多边形的顶点坐标。</p>
+<p>注意：所有坐标都是相对于图片的左上角来计算的。</p>
+<div class="table-wrapper"><table>
+  <thead>
+      <tr>
+          <th>属性</th>
+          <th>属性值</th>
+          <th>说明</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>src</td>
+          <td>图片路径</td>
+          <td>必须属性</td>
+      </tr>
+      <tr>
+          <td>alt</td>
+          <td>文字</td>
+          <td>图片显示不出</td>
+      </tr>
+      <tr>
+          <td>title</td>
+          <td>文字</td>
+          <td>鼠标放在图片上后显示的文字</td>
+      </tr>
+      <tr>
+          <td>width</td>
+          <td>像素</td>
+          <td>宽度</td>
+      </tr>
+      <tr>
+          <td>height</td>
+          <td>像素</td>
+          <td>高度</td>
+      </tr>
+      <tr>
+          <td>border</td>
+          <td>像素</td>
+          <td>边框粗细</td>
+      </tr>
+  </tbody>
+</table></div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://baidu.com&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://r34tujk76.hb-bkt.clouddn.com/blog/20211126/195024889.jpg&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">                             
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="9htmltable表格">9HTML&lt;.table&gt;表格
+</h1><h2 id="1表格使用代码">1.表格使用代码
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>名称<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>官网<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>性质<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>b站<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>bilibili.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>综合<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>百度<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>http://www.baidu.com/<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>搜索<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>当当<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>http://www.dangdang.com/<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>图书<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>在里面中出现了新的单词table tr td th</li>
+<li>tr表示table row 表示行数</li>
+<li>td表示table datacell 表示表格的单元格</li>
+<li>th表示table heading表示表头</li>
+</ul>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051306677.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<h2 id="2表格的边框合并">2.表格的边框合并
+</h2><p>如果不进行修改会显示双层边框这时候利用css的border-collapse的属性为collapse</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;table border=&#34;1&#34; style&#34;border-collapse:collapse&#34;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="3表格的标题caption">3.表格的标题&lt;.caption&gt;
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border-collapse:collapse;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">caption</span><span class="p">&gt;</span>这是标题<span class="p">&lt;/</span><span class="nt">caption</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>第一行并且居中显示</p>
+<h2 id="4合并">4.合并
+</h2><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051306585.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+><code>rowspan</code>跨行合并单元格
+<code>colspan</code>跨列合并单元格</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">table</span> <span class="na">border</span><span class="o">=</span><span class="s">&#34;1&#34;</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;border-collapse: collapse;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">       <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>名称<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>官网<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">th</span><span class="p">&gt;</span>性质<span class="p">&lt;/</span><span class="nt">th</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>C语言中文网<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>http://c.biancheng.net/<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">     <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>教育<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">rowspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>百度<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>www.baidu.com<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span><span class="p">&gt;</span>搜索<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">&lt;</span><span class="nt">td</span> <span class="na">colspan</span><span class="o">=</span><span class="s">&#34;2&#34;</span><span class="p">&gt;</span>http://www.dangdang.com/<span class="p">&lt;/</span><span class="nt">td</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">tr</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">table</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="5表格的属性">5.表格的属性
+</h2><p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051306327.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<h1 id="10html列表标签">10.HTML列表标签
+</h1><p>&lt;.ul&gt;&lt;.ol&gt;&lt;.dl&gt;</p>
+<p>html为我们提功了三个列表表达方式</p>
+<h2 id="1有序列表">1.有序列表
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>煮米饭的步骤：<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>将水煮沸<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>加入一勺米<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>搅拌均匀<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>继续煮10分钟<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>ol为order list的意思为有序列表<br>
+li为 list item的意思为每一项</p>
+<h2 id="2无序列表">2.无序列表
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>早餐的种类：<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>鸡蛋<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>牛奶<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>面包<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>生菜<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>&lt;.ul&gt; 是 unordered list 的简称，表示无序列表。</li>
+<li>&lt;..ul&gt; 和 &lt;.ol&gt; 中的 &lt;.li&gt; 一样，都表示列表中的每一项。默认情况下，无序列表的每一项都使用<code>●</code>符号表示。</li>
+</ul>
+<h2 id="3自定义列表">3.自定义列表
+</h2><p>定义如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;dl&gt;
+</span></span><span class="line"><span class="cl">    &lt;dt&gt;标题1&lt;dt&gt;
+</span></span><span class="line"><span class="cl">    &lt;dd&gt;描述文本2&lt;dd&gt;
+</span></span><span class="line"><span class="cl">    &lt;dt&gt;标题2&lt;dt&gt;
+</span></span><span class="line"><span class="cl">    &lt;dd&gt;描述文本2&lt;dd&gt;
+</span></span><span class="line"><span class="cl">    &lt;dt&gt;标题3&lt;dt&gt;
+</span></span><span class="line"><span class="cl">    &lt;dd&gt;描述文本3&lt;dd&gt;
+</span></span><span class="line"><span class="cl">&lt;/dl&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>dl为定义列表 dt为定义术语 dd为定义描述</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>HTML<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>HTML 是一种专门用来开发网页的标记语言，您可以转到《<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/html/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>HTML教程<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>》了解更多。<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>CSS<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>CSS 层叠样式表可以控制 HTML 文档的显示样式，用来美化网页，您可以转到《<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/css3/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>CSS教程<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>》了解更多。<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dt</span><span class="p">&gt;</span>JavaScript<span class="p">&lt;/</span><span class="nt">dt</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">dd</span><span class="p">&gt;</span>JavaScript 简称 JS，是一种用来开发网站（包括前端和后台）的脚本编程语言，您可以转到《<span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://c.biancheng.net/js/&#34;</span> <span class="na">target</span><span class="o">=</span><span class="s">&#34;_blank&#34;</span><span class="p">&gt;</span>JS教程<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>》了解更多。<span class="p">&lt;/</span><span class="nt">dd</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">dl</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="4列表的默认样态">4.列表的默认样态
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"> <span class="p">&lt;</span><span class="nt">ol</span> <span class="na">style</span><span class="o">=</span><span class="s">&#34;margin:0px auto; padding-left:20px; list-style:upper-latin;&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>将水煮沸<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>加入一勺米<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>搅拌均匀<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>继续煮10分钟<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">ol</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">对 CSS 样式的说明：
+</span></span><span class="line"><span class="cl">margin:0px auto;将上下外边距设置为 0 像素，将左右外边距设置为自动。
+</span></span><span class="line"><span class="cl">margin-bottom:0px;将下方外边距设置为 0 像素。
+</span></span><span class="line"><span class="cl">margin:auto auto 10px 0px;将上方和右侧外边距设置为自动，将下方外边距设置为 10 像素，将左侧外边距设置为 0 像素。
+</span></span><span class="line"><span class="cl">padding-left:20px;将左侧内边距设置为 20 像素。
+</span></span><span class="line"><span class="cl">list-style:upper-latin;将列表项标记设置为大写拉丁字母。
+</span></span><span class="line"><span class="cl">list-style:square;将列表项标记设置为实心方块。
+</span></span><span class="line"><span class="cl">    
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h1 id="11form标签">11.⛤⛤⛤&lt;.form&gt;标签
+</h1><p>如果想通过网页交互可以通过form实现</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;URL&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;GET|POST&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    表单中的其它标签
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>action属性表示表单交到哪里</li>
+<li>method属性表示使用什么方式提交数据</li>
+<li>表单属于 HTML 文档的一部分，其中包含了如输入框、复选框、单选按钮、提交按钮等不同的表单控件，用户通过修改表单中的元素（例如输入文本，选择某个选项等）来完成表单，通过表单中的提交按钮将表单数据提交给后端程序。</li>
+</ul>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051306949.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<p>除了type以外input还有其它的属性</p>
+<p><img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051307769.png"
+	
+	
+	
+	loading="lazy"
+	
+		alt="mark"
+	
+	
+></p>
+<p>注意这个name，如果说没有name属性，在这里如果没有name属性比如上例，点击male和female都可以<br>
+单选和复选name应该是相同的值</p>
+<p>checked这个是默认勾选的，比如说用户同意这种的</p>
+<h2 id="1文字域">1文字域
+</h2><form>
+账号<input type="text" name="firstname" value="请输入"><br>
+密码<input type="text" name="lastname">
+</form>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;form&gt;
+</span></span><span class="line"><span class="cl">账号&lt;input type=&#34;text&#34; name=&#34;firstname&#34;&gt;&lt;br&gt;
+</span></span><span class="line"><span class="cl">密码&lt;input type=&#34;text&#34; name=&#34;lastname&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;/form&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="2密码字段">2密码字段
+</h2><p>如果想输入密码的话 input type=&ldquo;password&quot;修改password</p>
+<p>这样就输入字符串，会变成星号</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">&lt;form&gt;
+</span></span><span class="line"><span class="cl">Password: &lt;input type=&#34;password&#34; name=&#34;pwd&#34;&gt;
+</span></span><span class="line"><span class="cl">&lt;/form&gt;
+</span></span></code></pre></td></tr></table>
+</div>
+</div><form>
+Password: <input type="password" name="pwd">
+</form>
+<h2 id="3按钮">3.按钮
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;sex&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;male&#34;</span><span class="p">&gt;</span>Male<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;sex&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;female&#34;</span> <span class="na">checked</span><span class="o">=</span><span class="s">&#34;checked&#34;</span><span class="p">&gt;</span>Female
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><form>
+<input type="radio" name="sex" value="男">Male<br>
+<input type="radio" name="sex" value="女">Female
+</form>
+<h2 id="4复选框checkboxes">4.复选框checkboxes
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="na">value</span><span class="err">&#34;</span><span class="na">男</span><span class="err">&#34;</span><span class="p">&gt;</span>男<span class="p">&lt;</span><span class="nt">br</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;checkbox&#34;</span> <span class="na">value</span><span class="err">&#34;</span><span class="na">女</span><span class="err">&#34;</span><span class="p">&gt;</span>女
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><form>
+<input type="checkbox" value"男">男<br>
+    <input type="checkbox" value"女" checked="checked">女
+</form>
+<h2 id="5提交按钮">5提交按钮
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;input&#34;</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;html_form_action.php&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;get&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">Username: <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;user&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Submit&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><form name="input" action="html_form_action.php" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="Submit">
+</form>
+<form name="input" action="html_form_action.php" method="get">
+Username: <input type="text" name="user">
+<input type="submit" value="点我发送">
+</form>
+<p>假如您在上面的文本框内键入几个字母，然后点击确认按钮，那么输入数据会传送到 &ldquo;html_form_action.php&rdquo; 的页面。该页面将显示出输入的结果。</p>
+<h2 id="6简单的下拉列表">6.简单的下拉列表
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>你喜欢吃什么<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">select</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;cars&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;volvo&#34;</span><span class="p">&gt;</span>洋芋<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">option</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;saab&#34;</span>　<span class="na">selected</span><span class="o">=</span><span class="s">&#34;selected&#34;</span><span class="p">&gt;</span>土豆<span class="p">&lt;/</span><span class="nt">option</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">select</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>你喜欢吃什么</p>
+<form>
+<select name="cars">
+<option value="volvo">洋芋</option>
+<option value="saab">土豆</option>
+</select>
+</form>
+![mark](https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/202112051307064.png)
+<h2 id="7重置reset">7重置reset
+</h2><form>
+   <input type="reset" value="点我重新填写">
+</form>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">   <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;reset&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;点我重新填写&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="8定义点击按钮">8定义点击按钮
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;button&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;点我&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="9上传文件">9上传文件
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;file&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;点我&#34;</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="10label标签">10.label标签
+</h2><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span><span class="na">name</span><span class="o">=</span><span class="s">&#34;sex&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nan&#34;</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;nan&#34;</span><span class="p">&gt;</span>男<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;radio&#34;</span><span class="na">name</span><span class="o">=</span><span class="s">&#34;sex&#34;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#34;nv&#34;</span><span class="p">&gt;&lt;</span><span class="nt">label</span> <span class="na">for</span><span class="o">=</span><span class="s">&#34;nv&#34;</span><span class="p">&gt;</span>女<span class="p">&lt;/</span><span class="nt">label</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="11表单元素">11.表单元素
+</h2><p>textarea表单元素</p>
+<p>当用户输入过多的元素的时候不用单纯的text了</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-html" data-lang="html"><span class="line"><span class="cl"><span class="p">&lt;</span><span class="nt">form</span><span class="p">&gt;</span>今日反馈
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;</span><span class="nt">textarea</span> <span class="na">cols</span><span class="o">=</span><span class="s">&#34;5&#34;</span> <span class="na">rows</span><span class="o">=</span><span class="s">&#34;1&#34;</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">&lt;/</span><span class="nt">textarea</span><span class="p">&gt;</span>
+</span></span><span class="line"><span class="cl"><span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><form>今日反馈
+    <textarea cols="10" rows="1">
+    </textarea>
+</form>
+<h1 id="13html综合学习">13.html综合学习
+</h1><h2 id="1注册界面">1注册界面
+</h2><p>.html综合学习</p>
+<h2 id="1注册界面-1">1注册界面
+</h2>
+</section>
+
+
+    <footer class="article-footer">
+    
+    <section class="article-tags">
+        
+            <a href="/tags/%E5%89%8D%E7%AB%AF/">前端</a>
+        
+            <a href="/tags/%E5%AD%A6%E4%B9%A0/">学习</a>
+        
+    </section>
+
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+
+    
+        <link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"integrity="sha384-n8MVd4RsNIU0tAv4ct0nTaAbDJwPJzDEaqSD1odI&#43;WdtXRGWt2kTvGFasHpSy3SV"crossorigin="anonymous"
+            ><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"integrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG&#43;vnGctmUb0ZY0l8"crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"integrity="sha384-&#43;VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4&#43;/RRE05"crossorigin="anonymous"
+                defer
+                >
+            </script><script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const elementsToRender = [".main-article", ".widget--toc"];
+
+        elementsToRender.forEach(selector => {
+            const element = document.querySelector(selector);
+            if (element) {
+                renderMathInElement(element, {
+                    delimiters: [
+                        { left: "$$", right: "$$", display: true },
+                        { left: "$", right: "$", display: false },
+                        { left: "\\(", right: "\\)", display: false },
+                        { left: "\\[", right: "\\]", display: true }
+                    ],
+                    ignoredClasses: ["gist"]
+                });
+            }
+        });
+    });
+</script>
+    
+</article>
+
+    
+
+    
+
+<aside class="related-content--wrapper">
+    <h2 class="section-title">相关文章</h2>
+    <div class="related-content">
+        <div class="flex article-list--tile">
+            
+                
+<article class="has-image">
+    <a href="/post/10605/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012928.png" loading="lazy" data-key="10605" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20211205012928.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">CSS基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/1364342007/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">云服务器</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/9dafd965/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">linux学习笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="">
+    <a href="/post/1364342167/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">JavaWeb笔记</h2>
+        </div>
+    </a>
+</article>
+
+            
+                
+<article class="has-image">
+    <a href="/post/16977/">
+        
+        
+            <div class="article-image">
+                
+                    <img src="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220729003418.png" loading="lazy" data-key="16977" data-hash="https://kaguranotamashii-1308648145.cos.ap-beijing.myqcloud.com/20220729003418.png"/>
+                
+            </div>
+        
+
+        <div class="article-details">
+            <h2 class="article-title">MySql基础</h2>
+        </div>
+    </a>
+</article>
+
+            
+        </div>
+    </div>
+</aside>
+
+     
+    
+        
+    <script src="//cdn.jsdelivr.net/npm/twikoo@1.6.44/dist/twikoo.all.min.js"></script>
+<div id="tcomment"></div>
+<style>
+    .twikoo {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+    :root[data-scheme="dark"] {
+        --twikoo-body-text-color-main: rgba(255, 255, 255, 0.9);
+        --twikoo-body-text-color: rgba(255, 255, 255, 0.7);
+    }
+    .twikoo .el-input-group__prepend,
+    .twikoo .tk-action-icon,
+    .twikoo .tk-submit-action-icon,
+    .twikoo .tk-time,
+    .twikoo .tk-comments-no,
+    .twikoo .tk-comments-count {
+        color: var(--twikoo-body-text-color);
+    }
+    .twikoo .el-input__inner,
+    .twikoo .el-textarea__inner,
+    .twikoo .tk-preview-container,
+    .twikoo .tk-content,
+    .twikoo .tk-nick,
+    .twikoo .tk-send,
+    .twikoo .tk-comments-no,
+    .twikoo .el-input__count,
+    .twikoo .tk-submit-action-icon {
+        color: var(--twikoo-body-text-color-main)!important;
+    }
+    .twikoo .el-button{
+        color: var(--twikoo-body-text-color)!important;
+    }
+    .twikoo .el-input__count {
+        color: var(--twikoo-body-text-color) !important;
+    }
+    .OwO .OwO-body {
+        background-color: var(--body-background) !important;
+        color: var(--body-text-color) !important;
+    }
+</style><script>
+    twikoo.init({
+        envId: '',
+        el: '#tcomment',})
+</script>
+
+    
+
+    <footer class="site-footer">
+  <div class="footer-container">
+
+    
+    <div class="footer-line">
+      © 
+      
+        2021 – 2025
+      
+      <span class="site-name">Example Person</span>
+    </div>
+
+    
+    
+    
+    
+    
+
+    <div class="footer-line stats">
+      发布了 33 篇文章 · 共 11.0 万字
+    </div>
+
+    
+    <div class="footer-line powered">
+      
+    </div>
+      
+使用 <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> 构建||       
+主题 <b><a href="https://github.com/kagurasoul/hugo-theme-stack-kagura" target="_blank" rel="noopener" data-version="3.32.0">Stack-kagura</a></b> 由 <a href="https://github.com/kagurasoul" target="_blank" rel="noopener">kagurasoul</a> 修改
+
+  </div>
+</footer>
+
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"integrity="sha256-ePwmChbbvXbsO02lbM3HoHbSHTHFAeChekF1xKJdleo="crossorigin="anonymous"
+                defer
+                >
+            </script><script 
+                src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"integrity="sha256-UKkzOn/w1mBxRmLLGrSeyB4e1xbrp4xylgAWb3M42pU="crossorigin="anonymous"
+                defer
+                >
+            </script><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.min.css"crossorigin="anonymous"
+            ><link 
+                rel="stylesheet" 
+                href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.css"crossorigin="anonymous"
+            >
+
+            </main>
+        </div>
+        <script 
+                src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.6/dist/vibrant.min.js"integrity="sha256-awcR2jno4kI5X0zL8ex0vi2z&#43;KMkF24hUW8WePSA9HM="crossorigin="anonymous"
+                
+                >
+            </script><script type="text/javascript" src="/ts/main.684e1f482c506a2d9482ab16c2c5b44a0159091a06e5058c62b7178e79d320d5.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+    </body>
+</html>
