@@ -1,0 +1,17 @@
+# i18n/zh-cn.toml
+[footer_articles]
+other = "发布了 {{.Count}} 篇文章"
+
+[footer_words]
+other = "共 {{.Count}} 字"
+
+
+[footer_stats]
+other = "发布了 {{.Articles}} 篇文章 · 共 {{.Words}} 万字"
+
+# i18n/zh-cn.toml
+[footer_builtWith]
+other = "使用 <a href=\"https://gohugo.io/\" target=\"_blank\" rel=\"noopener\">Hugo</a> 构建"
+
+[footer_designedBy]
+other = "主题 <b><a href=\"https://github.com/kagurasoul/hugo-theme-stack-kagura\" target=\"_blank\" rel=\"noopener\" data-version=\"{{ .Version }}\">Stack-kagura</a></b> 由 <a href=\"https://github.com/kagurasoul\" target=\"_blank\" rel=\"noopener\">kagurasoul</a> 修改"

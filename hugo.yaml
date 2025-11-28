@@ -1,0 +1,242 @@
+# ----------------------------------------------------------------------------------
+# Hugo 站点基础设置
+# ----------------------------------------------------------------------------------
+baseURL: https://example.com/  # 站点基础 URL（部署后请修改为你的实际域名！）
+languageCode: zh-cn           # 站点语言代码
+theme: hugo-theme-stack        # 使用的主题
+title: Example Site            # 站点标题（英文默认）
+copyright: Example Person      # 版权信息
+
+# 主题 i18n（国际化/多语言）支持
+# 可用值：ar, bn, ca, de, el, en, es, fr, hu, id, it, ja, ko, nl, pt-br, th, uk, zh-cn, zh-hk, zh-tw
+DefaultContentLanguage: zh-cn     # 默认内容语言（请改为 'zh-cn' 以优先显示中文）
+
+# 如果 DefaultContentLanguage 是 [zh-cn ja ko] 中的一种，请将 hasCJKLanguage 设置为 true
+# 这将确保 .Summary 和 .WordCount 对中文/日文/韩文语言的统计正确。
+hasCJKLanguage: true        # 【中文站点建议修改】：请改为 true
+
+# ----------------------------------------------------------------------------------
+# 多语言配置 (languages)
+# ----------------------------------------------------------------------------------
+languages:
+    # --------------------------------------------------------
+    # 核心语言：中文 (zh-cn)
+    # --------------------------------------------------------
+    zh-cn:
+        languageName: 简体中文
+        title: 神楽之魂的博客  # 你的中文博客标题
+        weight: 1             # 设置为最低的 weight，使其成为默认语言
+        params:
+            sidebar:
+                subtitle: C'est la vie # 你的中文简介/描述
+    
+    # --------------------------------------------------------
+    # 英语 (en)
+    # --------------------------------------------------------
+    en:
+        languageName: English
+        title: Kagura's Soul Blog # 英文标题
+        weight: 2
+        params:
+            sidebar:
+                subtitle: C'est la vie
+    
+    # --------------------------------------------------------
+    # 日语 (ja)
+    # --------------------------------------------------------
+    ja:
+        languageName: 日本語
+        title: これは神楽の魂のブログ # 你的 Hexo 日文标题
+        weight: 3
+        params:
+            sidebar:
+                subtitle: C'est la vie
+
+# ----------------------------------------------------------------------------------
+# 服务配置 (services)
+# ----------------------------------------------------------------------------------
+services:
+    # 使用前请修改为你的 Disqus shortname
+    disqus:
+        shortname: "hugo-theme-stack"
+    # Google Analytics 跟踪 ID
+    googleAnalytics:
+        id:                            # 填写你的 GA 跟踪 ID
+
+# ----------------------------------------------------------------------------------
+# 分页和永久链接 (pagination & permalinks)
+# ----------------------------------------------------------------------------------
+pagination:
+    pagerSize: 10                       # 列表中每页显示的文章数量
+
+permalinks:
+    post: /post/:slug/                    # 文章页面的永久链接格式，使用文章的 slug 字段
+    page: /:slug/                      # 单页的永久链接格式（如 /about/）
+
+# ----------------------------------------------------------------------------------
+# 主题参数 (params) - 控制主题外观和功能
+# ----------------------------------------------------------------------------------
+params:
+    # customCSS: ["scss/_custom.scss"]
+    customCSS: ["scss/custom.scss"]
+    mainSections:
+        - post                         # 定义主页文章列表显示哪些 Section（内容分区）。请修改为你自己的分区名，如 ['cs', 'thinking']
+    featuredImageField: image          # 文章中用于封面图的 Front Matter 字段名
+    rssFullContent: true               # RSS 订阅是否包含文章完整内容
+    favicon: img/avatar.png                            # Favicon 路径，例如：`/favicon.ico` (需要放在 static 目录下)
+
+    # 页脚设置
+    footer:
+        since: 2021                   # 站点创建年份
+        customText:                    # 自定义页脚文本（如备案号）
+
+    # 日期格式设置
+    dateFormat:
+        published: Jan 02, 2006        # 文章发布日期的格式
+        lastUpdated: Jan 02, 2006 15:04 MST # 文章最后更新日期的格式
+
+    # 侧边栏设置
+    sidebar:
+        emoji: 🍥                      # 侧边栏标题旁的表情符号
+        # subtitle: Lorem ipsum dolor sit amet, consectetur adipiscing elit. # 侧边栏简介
+        avatar:
+            enabled: true              # 启用侧边栏头像
+            local: true                # 头像是否是本地文件
+            src: img/avatar.png        # 头像路径（相对于 static 目录，例如 static/img/avatar.png）
+
+    # 文章页设置
+    article:
+        math: true                     # 是否启用数学公式渲染 (KaTeX)
+        toc: true                      # 是否在文章中显示目录 (Table of Contents)
+        readingTime: true              # 是否显示预计阅读时间
+        license:
+            enabled: true              # 启用版权声明
+            default: Licensed under CC BY-NC-SA 4.0 # 默认版权文本
+
+    # 评论设置
+    comments:
+        enabled: true                  # 评论总开关
+        provider: twikoo               # 选择使用的评论服务，如 disqus, giscus, utterances, waline 等
+
+        # 以下是不同评论服务的详细配置，根据你选择的 provider 填写对应信息
+        disqusjs:
+            shortname:
+        # ... [省略其他评论服务配置，如 utterances, beaudar, remark42, vssue, waline, twikoo, cactus, giscus, gitalk, cusdis]
+        twikoo:
+            envId: https://twikoo-pk3f7hhfc-kaguranotamashii.vercel.app/
+            region:
+            path:
+            lang:
+
+    # 小部件 (Widgets)
+    widgets:
+        homepage:                      # 主页侧边栏小部件
+            - type: search             # 搜索框
+            - type: archives
+              params:
+                  limit: 5             # 归档列表限制 5 个
+            - type: categories
+              params:
+                  limit: 10            # 分类列表限制 10 个
+            - type: tag-cloud
+              params:
+                  limit: 10            # 标签云限制 10 个
+        page:
+            - type: toc                # 文章页侧边栏小部件（只显示目录）
+
+    # OpenGraph (社交媒体分享) 设置
+    opengraph:
+        twitter:
+            site:                      # 你的 Twitter 用户名 (用于 @mention)
+            card: summary_large_image  # 分享卡片样式：summary, summary_large_image
+
+    # 默认图片设置
+    defaultImage:
+        opengraph:
+            enabled: false
+            local: false
+            src:
+
+    # 颜色主题模式设置
+    colorScheme:
+        toggle: true                   # 显示颜色模式切换按钮
+        default: auto                  # 默认模式：auto（跟随系统）, light, 或 dark
+
+    # 图片处理设置
+    imageProcessing:
+        cover:
+            enabled: true              # 封面图启用图片处理
+        content:
+            enabled: true              # 内容图片启用图片处理
+ 
+    
+
+### ----------------------------------------------------------------------------------
+### 自定义菜单 (menu)
+### ----------------------------------------------------------------------------------
+### 提示：要移除 about, archive, search 页面的菜单项，请移除它们 FrontMatter 中的 `menu` 字段
+menu:
+    main: []                           # 主菜单项（顶部或侧边栏）
+
+    social:                            # 社交图标链接（侧边栏底部）
+        - identifier: github
+          name: GitHub
+          url: https://github.com/Kaguranotamashii
+          params:
+              icon: brand-github       # 图标名称（来自 Tabler Icons）
+
+        # - identifier: twitter
+        #   name: Twitter
+        #   url: https://twitter.com
+        #   params:
+        #       icon: brand-twitter
+
+# ----------------------------------------------------------------------------------
+# 相关文章设置 (related)
+# ----------------------------------------------------------------------------------
+related:
+    includeNewer: true                 # 包含较新的文章
+    threshold: 60                      # 相关文章的相似度阈值
+    toLower: false
+    indices:                           # 用于计算相似度的索引（权重越高越重要）
+        - name: tags
+          weight: 100
+        - name: categories
+          weight: 200
+
+# ----------------------------------------------------------------------------------
+# Markdown 渲染设置 (markup)
+# ----------------------------------------------------------------------------------
+markup:
+    goldmark:
+        extensions:
+            passthrough:
+                enable: true           # 启用 Markdown 内部的 Passthrough 功能
+                delimiters:            # Passthrough 分隔符（用于 KaTeX 等）
+                    block:
+                        - - \[
+                          - \]
+                        - - $$
+                          - $$
+                    inline:
+                        - - \(
+                          - \)
+        renderer:
+            ## 如果你的 Markdown 内容中包含 HTML，请设置为 true
+            unsafe: true               # 允许渲染未转义的 HTML 内容（例如在文章中嵌入 JS 或 HTML 块）
+    tableOfContents:
+        endLevel: 4                    # 目录的最大标题级别 (H4)
+        ordered: true                  # 目录是否为有序列表
+        startLevel: 1                  # 目录的最小标题级别 (H2)
+    highlight:                         # 代码高亮设置
+        noClasses: false               # 使用内联样式而非 CSS 类（Stack 主题建议保留 false）
+        codeFences: true
+        guessSyntax: true
+        lineNoStart: 1
+        lineNos: true
+        lineNumbersInTable: true
+        tabWidth: 4
+
+
+
+

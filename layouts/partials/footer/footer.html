@@ -1,0 +1,36 @@
+{{- $ThemeVersion := "3.32.0" -}}
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- 版权年份 -->
+    <div class="footer-line">
+      © 
+      {{ if .Site.Params.footer.since }}
+        {{ .Site.Params.footer.since }}{{ if ne .Site.Params.footer.since (now.Year) }} – {{ now.Year }}{{ end }}
+      {{ else }}
+        {{ now.Year }}
+      {{ end }}
+      <span class="site-name">{{ default .Site.Title .Site.Copyright }}</span>
+    </div>
+
+    <!-- 文章统计（优雅一行） -->
+    {{ $pages := where site.RegularPages "Section" "!=" "" }}
+    {{ $count := len $pages }}
+    {{ $words := 0 }}
+    {{ range $pages }}{{ $words = add $words .WordCount }}{{ end }}
+
+    <div class="footer-line stats">
+      {{ T "footer_stats" (dict "Articles" $count "Words" (div $words 10000.0 | lang.FormatNumber 1)) }}
+    </div>
+
+    <!-- Hugo + 主题（最美那句） -->
+    <div class="footer-line powered">
+      {{ T "footer_powered" (dict "Version" $ThemeVersion) | safeHTML }}
+    </div>
+      
+{{ T "footer_builtWith" | safeHTML }}||       
+{{ T "footer_designedBy" (dict "Version" $ThemeVersion) | safeHTML }}
+
+  </div>
+</footer>

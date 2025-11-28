@@ -1,0 +1,16 @@
+# i18n/en.toml
+[footer_articles]
+other = "{{.Count}} articles"
+
+[footer_words]
+other = "{{.Count}} words"
+
+[footer_stats]
+other = "{{.Articles}} articles · {{.Words}}k words"
+
+# i18n/en.toml
+[footer_builtWith]
+other = "Built with <a href=\"https://gohugo.io/\" target=\"_blank\" rel=\"noopener\">Hugo</a>"
+
+[footer_designedBy]
+other = "Theme <b><a href=\"https://github.com/kagurasoul/hugo-theme-stack-kagura\" target=\"_blank\" rel=\"noopener\" data-version=\"{{ .Version }}\">Stack-kagura</a></b> modified by <a href=\"https://github.com/kagurasoul\" target=\"_blank\" rel=\"noopener\">kagurasoul</a>"

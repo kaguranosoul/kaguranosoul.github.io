@@ -1,0 +1,16 @@
+# i18n/ja.toml
+[footer_articles]
+other = "{{.Count}} 件の記事を公開"
+
+[footer_words]
+other = "合計 {{.Count}} 文字"
+
+[footer_stats]
+other = "{{.Articles}} 記事 · 合計 {{.Words}} 万字"
+
+# i18n/ja.toml
+[footer_builtWith]
+other = "<a href=\"https://gohugo.io/\" target=\"_blank\" rel=\"noopener\">Hugo</a> で構築"
+
+[footer_designedBy]
+other = "テーマ <b><a href=\"https://github.com/kagurasoul/hugo-theme-stack-kagura\" target=\"_blank\" rel=\"noopener\" data-version=\"{{ .Version }}\">Stack-kagura</a></b> は <a href=\"https://github.com/kagurasoul\" target=\"_blank\" rel=\"noopener\">kagurasoul</a> が改変"
