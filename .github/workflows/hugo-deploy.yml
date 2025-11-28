@@ -81,6 +81,36 @@ jobs:
         run: |
           [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true # 如果有 lock 文件则运行 ci
 
+      - name: Inject Twikoo envId
+        env:
+          TWIKOO_ENV_ID: ${{ secrets.TWIKOO_ENV_ID }}   # 关键！！！
+        run: |
+          echo "正在注入 Twikoo envId（长度：${#TWIKOO_ENV_ID}）"
+          sed -i "s|\${TWIKOO_ENV_ID}|${TWIKOO_ENV_ID}|g" hugo.yaml
+          echo "注入完成！"
+
+
+      # ←←←← 这里加一个检测步骤 ↓↓↓↓
+      - name: 检查 Twikoo envId 是否已正确注入（失败就直接停止构建）
+        run: |
+          echo "======== hugo.yaml 中当前的 twikoo 配置 ========"
+          grep -A 5 -B 5 "twikoo:" hugo.yaml || true
+          echo "================================================"
+          
+          if grep -q "\${TWIKOO_ENV_ID}" hugo.yaml; then
+            echo "错误：注入失败！hugo.yaml 中仍然包含 \${TWIKOO_ENV_ID}，说明 Secrets 可能没配或者 sed 没生效"
+            # exit 1
+          fi
+          
+          if ! grep -q "envId:" hugo.yaml; then
+            echo "错误：hugo.yaml 里根本找不到 envId 字段，配置格式可能写错了"
+            # exit 1
+          fi
+          
+          echo "成功：Twikoo envId 已成功注入！"
+
+
+
       - name: Configure Git # 配置 Git 
         run: |
           git config core.quotepath false

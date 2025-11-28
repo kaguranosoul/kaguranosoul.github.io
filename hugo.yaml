@@ -123,10 +123,10 @@ params:
             shortname:
         # ... [省略其他评论服务配置，如 utterances, beaudar, remark42, vssue, waline, twikoo, cactus, giscus, gitalk, cusdis]
         twikoo:
-            envId: ""
-            region:
-            path:
-            lang:
+            envId: ${TWIKOO_ENV_ID}
+            # region:
+            # path:
+            # lang:
 
     # 小部件 (Widgets)
     widgets:

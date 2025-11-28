@@ -1,0 +1,8 @@
+{
+  "name": "hugo-blog",
+  "version": "1.0.0",
+  "scripts": {
+    "build:hugo": "echo '--- DEBUG START ---' && echo 'TWIKOO_ENV_ID is ${TWIKOO_ENV_ID}' && echo 'hugo.yaml BEFORE SED:' && grep -A 2 twikoo hugo.yaml && sed -i 's|\\${TWIKOO_ENV_ID}|'$TWIKOO_ENV_ID'|g' hugo.yaml && echo 'hugo.yaml AFTER SED:' && grep -A 2 twikoo hugo.yaml && echo '--- DEBUG END ---' && hugo --minify"
+  }
+   
+}
