@@ -6,6 +6,9 @@ on:
     branches:
       - main-hugo 
 
+permissions:
+  contents: write # 授予写入权限，用于推送到 main 分支
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
