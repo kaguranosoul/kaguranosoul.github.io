@@ -1,75 +1,91 @@
-name: Build and deploy
+name: Build and deploy # 工作流名称，在 GitHub Actions 界面显示
+
 on:
   push:
     branches:
-      - main-hugo
-  workflow_dispatch:
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-concurrency:
-  group: pages
-  cancel-in-progress: false
+      - main-hugo # 触发条件：每次代码推送到 main-hugo 分支时执行
+  workflow_dispatch: # 允许用户在 GitHub Actions 界面手动触发此工作流
+
+permissions: # 配置工作流所需的权限，这是使用 actions/deploy-pages 官方流程所必需的
+  contents: read # 允许读取仓库代码
+  pages: write # 允许写入 GitHub Pages 部署
+  id-token: write # 允许获取 OpenID Connect (OIDC) 令牌，用于安全认证
+
+concurrency: # 并发控制，确保只有一个部署任务在运行
+  group: pages # 限制 Pages 相关的 Job 只能运行一个实例
+  cancel-in-progress: false # 如果有新的推送进来，不要取消正在进行的 Job
+
 defaults:
   run:
-    shell: bash
+    shell: bash # 默认所有 run 步骤使用 Bash shell 执行
+
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    env:
-      DART_SASS_VERSION: 1.93.2
-      GO_VERSION: 1.25.3
-      HUGO_VERSION: 0.152.2
-      NODE_VERSION: 22.20.0
-      TZ: Europe/Oslo
+  build: # 构建 Job，负责安装依赖和生成静态文件
+    runs-on: ubuntu-latest # 在最新的 Ubuntu 虚拟机上运行此 Job
+    env: # 设置构建环境所需的变量
+      DART_SASS_VERSION: 1.93.2 # 指定 Dart Sass 版本，用于处理 SCSS
+      GO_VERSION: 1.25.3 # 指定 Go 语言版本，因为 Hugo 是用 Go 编写的，且用于 Modules 管理
+      HUGO_VERSION: 0.152.2 # 指定要安装的 Hugo 版本 (Extended 版本)
+      NODE_VERSION: 22.20.0 # 指定 Node.js 版本，用于处理 JS/NPM 依赖
+      TZ: Europe/Oslo # 设置时区，确保构建时间戳正确
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v5
+      - name: Checkout # 检出代码
+        uses: actions/checkout@v5 # 使用 v5 版本的 Checkout Action
         with:
-          submodules: recursive
-          fetch-depth: 0
-      - name: Setup Go
+          submodules: recursive # 递归检出所有子模块（例如：您的 Hugo 主题）
+          fetch-depth: 0 # 检出完整的 Git 历史，这对 Git Info 或 Lastmod 可能会有用
+
+      - name: Setup Go # 安装 Go 环境
         uses: actions/setup-go@v5
         with:
           go-version: ${{ env.GO_VERSION }}
           cache: false
-      - name: Setup Node.js
+
+      - name: Setup Node.js # 安装 Node.js 环境
         uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_VERSION }}
-      - name: Setup Pages
+
+      - name: Setup Pages # 配置 Pages 环境（关键步骤）
         id: pages
-        uses: actions/configure-pages@v5
-      - name: Create directory for user-specific executable files
+        uses: actions/configure-pages@v5 # GitHub 官方 Action，用于设置部署环境和 Base URL
+
+      - name: Create directory for user-specific executable files # 创建本地可执行文件目录
         run: |
           mkdir -p "${HOME}/.local"
-      - name: Install Dart Sass
+
+      - name: Install Dart Sass # 手动下载并安装 Dart Sass
         run: |
           curl -sLJO "https://github.com/sass/dart-sass/releases/download/${DART_SASS_VERSION}/dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
-          tar -C "${HOME}/.local" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
+          tar -C "${HOME}/.local" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz" # 解压到 .local 目录
           rm "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
-          echo "${HOME}/.local/dart-sass" >> "${GITHUB_PATH}"
-      - name: Install Hugo
+          echo "${HOME}/.local/dart-sass" >> "${GITHUB_PATH}" # 将 Dart Sass 路径添加到 PATH 环境变量
+
+      - name: Install Hugo # 手动下载并安装 Hugo Extended 版本
         run: |
           curl -sLJO "https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           mkdir "${HOME}/.local/hugo"
           tar -C "${HOME}/.local/hugo" -xf "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
           rm "hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz"
-          echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}"
-      - name: Verify installations
+          echo "${HOME}/.local/hugo" >> "${GITHUB_PATH}" # 将 Hugo 路径添加到 PATH 环境变量
+
+      - name: Verify installations # 验证所有工具是否安装成功
         run: |
           echo "Dart Sass: $(sass --version)"
           echo "Go: $(go version)"
           echo "Hugo: $(hugo version)"
           echo "Node.js: $(node --version)"
-      - name: Install Node.js dependencies
+
+      - name: Install Node.js dependencies # 安装 NPM 依赖（例如用于 PostCSS 等）
         run: |
-          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true
-      - name: Configure Git
+          [[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true # 如果有 lock 文件则运行 ci
+
+      - name: Configure Git # 配置 Git 
         run: |
           git config core.quotepath false
-      - name: Cache restore
+
+      - name: Cache restore # 尝试恢复 Hugo 缓存（提高构建速度）
         id: cache-restore
         uses: actions/cache/restore@v4
         with:
@@ -77,30 +93,35 @@ jobs:
           key: hugo-${{ github.run_id }}
           restore-keys:
             hugo-
-      - name: Build the site
+
+      - name: Build the site # 执行 Hugo 构建命令
         run: |
           hugo \
             --gc \
             --minify \
             --baseURL "${{ steps.pages.outputs.base_url }}/" \
-            --cacheDir "${{ runner.temp }}/hugo_cache"
-      - name: Cache save
+            --cacheDir "${{ runner.temp }}/hugo_cache" # 将缓存目录指向恢复的路径
+            # 注意：这里使用 steps.pages.outputs.base_url 动态获取 Pages 的 URL
+
+      - name: Cache save # 保存新的 Hugo 缓存
         id: cache-save
         uses: actions/cache/save@v4
         with:
           path: ${{ runner.temp }}/hugo_cache
           key: ${{ steps.cache-restore.outputs.cache-primary-key }}
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+
+      - name: Upload artifact # 上传构建结果（public 目录）
+        uses: actions/upload-pages-artifact@v3 # GitHub 官方 Action，用于打包待部署的文件
         with:
-          path: ./public
-  deploy:
-    environment:
+          path: ./public # 指定要上传的目录
+
+  deploy: # 部署 Job，依赖于 build Job
+    environment: # 部署到的环境（与 Pages 配置关联）
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }} # 输出最终的站点 URL
     runs-on: ubuntu-latest
-    needs: build
+    needs: build # 确保在 build Job 成功后才运行
     steps:
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages # 实际的部署操作
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v4 # GitHub 官方 Action，将 Artifact 发布到 Pages 服务
