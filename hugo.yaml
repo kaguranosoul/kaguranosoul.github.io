@@ -123,11 +123,7 @@ params:
             shortname:
         # ... [省略其他评论服务配置，如 utterances, beaudar, remark42, vssue, waline, twikoo, cactus, giscus, gitalk, cusdis]
         twikoo:
-<<<<<<< HEAD
             envId:  
-=======
-            envId: https://twikoo-pk3f7hhfc-kaguranotamashii.vercel.app/
->>>>>>> a6fdcd6 (Initial commit of Hugo source files to main-hugo branch)
             region:
             path:
             lang:
